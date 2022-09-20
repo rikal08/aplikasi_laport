@@ -18,6 +18,9 @@
 <script src="{{ asset('template') }}/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
 <!-- jQuery Knob Chart -->
 <script src="{{ asset('template') }}/bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
+<!-- DataTables -->
+<script src="{{ asset('template') }}/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="{{ asset('template') }}/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
 <!-- daterangepicker -->
 <script src="{{ asset('template') }}/bower_components/moment/min/moment.min.js"></script>
 <script src="{{ asset('template') }}/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
@@ -35,5 +38,20 @@
 <script src="{{ asset('template') }}/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('template') }}/dist/js/demo.js"></script>
+
+<script>
+  $(function () {
+    $('#example1').DataTable()
+    $('#example2').DataTable({
+      'paging'      : true,
+      'lengthChange': false,
+      'searching'   : false,
+      'ordering'    : true,
+      'info'        : true,
+      'autoWidth'   : false,
+      scrollX       : true
+    })
+  })
+</script>
 </body>
 </html>

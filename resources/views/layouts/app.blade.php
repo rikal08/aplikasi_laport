@@ -59,6 +59,12 @@
             <i class="fa fa-home"></i> <span>Home</span>
           </a>
         </li>
+
+        @if (Auth::user()->level==1)
+            @include('menu.admin_menu')
+        @else
+            
+        @endif
       </ul>
     </section>
     <!-- /.sidebar -->
@@ -69,13 +75,9 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Dashboard
-        <small>Control panel</small>
+        Aplikasi Raport
+        <small>@yield('title')</small>
       </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Dashboard</li>
-      </ol>
     </section>
 
     <!-- Main content -->

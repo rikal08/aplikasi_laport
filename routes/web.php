@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DataAdminController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,5 +19,7 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+// data admin routes
+Route::resource('/data-admin',DataAdminController::class);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
