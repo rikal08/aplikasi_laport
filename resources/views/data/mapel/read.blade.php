@@ -6,6 +6,7 @@
 @endsection
 
 @section('content')
+@include('layouts.alert')
 <div class="row">
     <div class="col-xs-12">
       <div class="box">
@@ -13,7 +14,18 @@
           <h3 class="box-title">Data Mata Pelajaran</h3>
         </div>
         <div class="box-header">
-          <a href="" class="btn btn-primary"><i class="fa fa-plus"></i>Tambah Data</a>
+            <form action="{{ url('data-mapel') }}" method="POST">
+              @csrf
+              @method('POST')
+                <div class="form-group">
+                  <label for="">Nama Mata Pelajaran</label>
+                  <input placeholder="Masukan Nama Mata Pelajaran" type="text" class="form-control" name="nama_mapel" required>
+                </div>
+
+                <div class="form-group">
+                  <button type="submit" class="btn btn-primary"><i class="fa fa-plus"></i>  Tambah</button>
+                </div>
+            </form>
         </div>
         <!-- /.box-header -->
         <div class="box-body">
@@ -27,23 +39,19 @@
             </thead>
             <tbody>
            
+            @foreach ($mapel as $item)
+                
+            <tr>
+              <td>{{ $no++ }}</td>
+              <td>{{ $item->nama_mapel }}</td>
+              <td>
+                <a href="" data-toggle="modal" data-target="#modal-hapus{{ $item->id_mapel }}" class="btn btn-danger"> <i class="fa fa-trash"></i></a>
+                
+              </td>
+            </tr>
+            @include('data.mapel.delete')
+            @endforeach
             
-            <tr>
-                <td>1</td>
-                <td>IPA</td>
-                <td>
-                    <a href="" class="btn btn-danger"> <i class="fa fa-trash"></i></a>
-                    <a href="" class="btn btn-primary"> <i class="fa fa-edit"></i></a>
-                </td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Matematika</td>
-                <td>
-                    <a href="" class="btn btn-danger"> <i class="fa fa-trash"></i></a>
-                    <a href="" class="btn btn-primary"> <i class="fa fa-edit"></i></a>
-                </td>
-            </tr>
          
             </tbody>
           </table>

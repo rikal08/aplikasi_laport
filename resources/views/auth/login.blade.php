@@ -29,22 +29,33 @@
 </head>
 <body class="hold-transition login-page">
 <div class="login-box">
+  
   <div class="login-logo">
     <a href="../../index2.html"><b>Aplikasi Raport</b></a>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
     <p class="login-box-msg">Silahkan Login</p>
-
+    
     <form action="{{ route('login') }}" method="post">
         @csrf
       <div class="form-group has-feedback">
         <input type="email" name="email" class="form-control" placeholder="Email">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+        @error('email')
+          <span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+          </span>
+        @enderror
       </div>
       <div class="form-group has-feedback">
         <input type="password" name="password" class="form-control" placeholder="Password">
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+        @error('password')
+        <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong>
+        </span>
+      @enderror
       </div>
       <div class="row">
         <!-- /.col -->

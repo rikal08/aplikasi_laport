@@ -13,7 +13,22 @@
           <h3 class="box-title">Data Kelas</h3>
         </div>
         <div class="box-header">
-          <a href="" class="btn btn-primary"><i class="fa fa-plus"></i>Tambah Data</a>
+          <form action="{{ url('data-mapel') }}" method="POST">
+            @csrf
+            @method('POST')
+              <div class="form-group">
+                <label for="">Kode Kelas</label>
+                <input placeholder="Masukan Nama Mata Pelajaran" type="text" class="form-control" name="kode_kelas" required>
+              </div>
+              <div class="form-group">
+                <label for="">Wali Kelas</label>
+                <input placeholder="Masukan Nama Mata Pelajaran" type="text" class="form-control" name="nama_mapel" required>
+              </div>
+
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary"><i class="fa fa-plus"></i>  Tambah Kelas</button>
+              </div>
+          </form>
         </div>
         <!-- /.box-header -->
         <div class="box-body">

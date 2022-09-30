@@ -6,6 +6,7 @@
 @endsection
 
 @section('content')
+@include('layouts.alert')
 <div class="row">
     <div class="col-xs-12">
       <div class="box">
@@ -13,8 +14,19 @@
           <h3 class="box-title">Data Extrakulikuler</h3>
         </div>
         <div class="box-header">
-          <a href="" class="btn btn-primary"><i class="fa fa-plus"></i>Tambah Data</a>
-        </div>
+          <form action="{{ url('data-extra') }}" method="POST">
+            @csrf
+            @method('POST')
+              <div class="form-group">
+                <label for="">Nama Extrakulikuler</label>
+                <input placeholder="Masukan Nama Extrakulikuler" type="text" class="form-control" name="nama_extra" required>
+              </div>
+
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary"><i class="fa fa-plus"></i>  Tambah</button>
+              </div>
+          </form>
+      </div>
         <!-- /.box-header -->
         <div class="box-body">
           <table id="example2" class="table table-bordered table-hover">
@@ -27,23 +39,18 @@
             </thead>
             <tbody>
            
+            @foreach ($extra as $item)
+                
             
             <tr>
-                <td>1</td>
-                <td>Pramuka</td>
+                <td>{{ $no++ }}</td>
+                <td>{{ $item->nama_extra }}</td>
                 <td>
-                    <a href="" class="btn btn-danger"> <i class="fa fa-trash"></i></a>
-                    <a href="" class="btn btn-primary"> <i class="fa fa-edit"></i></a>
+                    <a href="" data-toggle="modal" data-target="#modal-hapus{{ $item->id_extra }}" class="btn btn-danger"> <i class="fa fa-trash"></i></a>
                 </td>
             </tr>
-            <tr>
-                <td>2</td>
-                <td>Pencak Silat</td>
-                <td>
-                    <a href="" class="btn btn-danger"> <i class="fa fa-trash"></i></a>
-                    <a href="" class="btn btn-primary"> <i class="fa fa-edit"></i></a>
-                </td>
-            </tr>
+            @include('data.extra.delete')
+            @endforeach
             
          
             </tbody>

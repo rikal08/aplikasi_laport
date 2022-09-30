@@ -1,10 +1,13 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\MapelController;
 use App\Http\Controllers\DataAdminController;
 use App\Http\Controllers\DataExtraController;
 use App\Http\Controllers\DataMapelController;
 use App\Http\Controllers\DataKepsekController;
+use App\Http\Controllers\GuruController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,11 +47,12 @@ Route::get('/data-tha',function ()
 {
    return view('data.tha.read'); 
 });
-Route::get('/data-guru',function ()
-{
-   return view('data.guru.read'); 
-});
+Route::resource('/data-guru',GuruController::class);
 Route::get('/data-siswa',function ()
 {
    return view('data.siswa.read'); 
 });
+
+// // API
+
+// Route::apiResource('/mata-pelajaran',MapelController::class);
