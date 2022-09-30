@@ -26,15 +26,11 @@
                     <label for="">Mata Pelajaran</label>
                     <select name="id_mapel" class="form-control" id="">
                         @foreach ($mapel as $item)
+                        @if ($data->id_mapel == $item->id_mapel)
+                            <option selected value="{{ $item->id_mapel }}">{{ $item->nama_mapel }}</option>
+                        @else
                             <option value="{{ $item->id_mapel }}">{{ $item->nama_mapel }}</option>
-                        @endforeach
-                    </select>
-                </div> 
-                <div class="form-group">
-                    <label for="">Extrakulikuler</label>
-                    <select name="id_mapel" class="form-control" id="">
-                        @foreach ($extra as $item)
-                            <option value="{{ $item->id_extra }}">{{ $item->nama_extra }}</option>
+                        @endif
                         @endforeach
                     </select>
                 </div>

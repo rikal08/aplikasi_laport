@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Extra;
 use App\Models\Guru;
 use App\Models\Mapel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\DB;
 
 class GuruController extends Controller
@@ -26,8 +28,20 @@ class GuruController extends Controller
     public function create()
     {
         $mapel = Mapel::all();
+        $extra = Extra::all();
 
-        return view('data.guru.create',['mapel'=>$mapel]);
+        return view('data.guru.create',['mapel'=>$mapel,'extra'=>$extra]);
+    }
+
+    public function edit($id)
+    {
+        $id_true = Crypt::decrypt($id);
+        $guru = Guru::findorfail($id_true);
+
+        $mapel = Mapel::all();
+        $extra = Extra::all();
+        
+        return view('data.guru.edit',['data'=>$guru,'mapel'=>$mapel,'extra'=>$extra]);
     }
 
 }

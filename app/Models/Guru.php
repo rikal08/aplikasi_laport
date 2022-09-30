@@ -9,15 +9,15 @@ class Guru extends Model
 {
     use HasFactory;
 
-    protected $table = 'users';
+    protected $table = 'guru';
     protected $fillable = [
-        'kd',
+        'id_guru',
         'name',
+        'id_mapel',
+        'id_extra',
         'alamat',
         'telepon',
-        'id_mapel',
         'email',
         'password',
-        'level',
     ];
 }
