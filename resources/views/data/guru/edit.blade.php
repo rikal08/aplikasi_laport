@@ -37,13 +37,12 @@
                 <div class="form-group">
                     <label for="">Extrakulikuler</label>
                     <select name="id_extra" class="form-control" id="">
+                        <option value="0">Tidak ada</option>
                         @foreach ($extra as $item)
                         @if ($data->id_extra == $item->id_extra)
-                            
                         <option selected value="{{ $item->id_extra }}">{{ $item->nama_extra }}</option>
-                        @else
+                        @elseif ($data->id_extra==null)
                         <option value="{{ $item->id_extra }}">{{ $item->nama_extra }}</option>
-                            
                         @endif
                         @endforeach
                     </select>
@@ -54,7 +53,7 @@
                 </div>
                 <div class="form-group">
                     <label for="">Telepon</label>
-                    <input placeholder="Masukan Telepon" value="{{ $data->id_telepon }}" type="text" required class="form-control" name="telepon">
+                    <input placeholder="Masukan Telepon" value="{{ $data->telepon }}" type="text" required class="form-control" name="telepon">
                 </div>
                 <div class="form-group">
                     <label for="">Email</label>

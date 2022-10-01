@@ -25,6 +25,7 @@
                 <div class="form-group">
                     <label for="">Mata Pelajaran</label>
                     <select name="id_mapel" class="form-control" id="">
+                        <option value="0" selected>Tidak Ada</option>
                         @foreach ($mapel as $item)
                             <option value="{{ $item->id_mapel }}">{{ $item->nama_mapel }}</option>
                         @endforeach
@@ -32,7 +33,8 @@
                 </div> 
                 <div class="form-group">
                     <label for="">Extrakulikuler</label>
-                    <select name="id_mapel" class="form-control" id="">
+                    <select name="id_extra" class="form-control" id="">
+                        <option value="0" selected>Tidak Ada</option>
                         @foreach ($extra as $item)
                             <option value="{{ $item->id_extra }}">{{ $item->nama_extra }}</option>
                         @endforeach
@@ -56,7 +58,7 @@
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary">Simpan</button>
-                    <a href="{{ url('data-kepsek') }}" class="btn btn-danger">Batal</a>
+                    <a href="{{ url('data-guru') }}" class="btn btn-danger">Batal</a>
                 </div>
             </form>
         </div>

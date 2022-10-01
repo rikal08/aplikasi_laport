@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Extra;
 use App\Models\Guru;
+use App\Models\User;
+use App\Models\Extra;
 use App\Models\Mapel;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Crypt;
 
 class GuruController extends Controller
 {
@@ -31,6 +33,23 @@ class GuruController extends Controller
         $extra = Extra::all();
 
         return view('data.guru.create',['mapel'=>$mapel,'extra'=>$extra]);
+    }
+
+    public function store(Request $request)
+    {
+        User::create([
+            'kd'=>$request->id_guru,
+            'name'=>$request->name,
+            'id_mapel' => $request->id_mapel,
+            'id_extra'=>$request->id_extra,
+            'alamat'=>$request->alamat,
+            'telepon'=>$request->telepon,
+            'email'=>$request->email,
+            'password'=>Hash::make($request->password),
+            'level'=>3
+        ]);
+
+        return redirect()->back()->with('success','Data guru berhasil disimpan');
     }
 
     public function edit($id)
