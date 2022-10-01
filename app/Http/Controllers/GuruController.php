@@ -44,4 +44,33 @@ class GuruController extends Controller
         return view('data.guru.edit',['data'=>$guru,'mapel'=>$mapel,'extra'=>$extra]);
     }
 
+    public function update(Request $request,$id)
+    {
+        $guru = Guru::findorfail($id);
+        if ($request->password==true) {
+            $guru->id_guru = $request->id_guru;
+        $guru->name = $request->name;
+        $guru->id_mapel = $request->id_mapel;
+        $guru->id_extra = $request->id_extra;
+        $guru->alamat = $request->alamat;
+        $guru->telepon = $request->telepon;
+        $guru->email = $request->email;
+        $guru->password = $request->password;
+        } else {
+            $guru->id_guru = $request->id_guru;
+        $guru->name = $request->name;
+        $guru->id_mapel = $request->id_mapel;
+        $guru->id_extra = $request->id_extra;
+        $guru->alamat = $request->alamat;
+        $guru->telepon = $request->telepon;
+        $guru->email = $request->email;
+        }
+        
+        
+
+        $guru->save();
+
+        return redirect()->back()->with('success','Data guru berhasil diupdate');
+    }
+
 }

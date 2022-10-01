@@ -20,4 +20,6 @@ class Guru extends Model
         'email',
         'password',
     ];
+
+    public $timestamps = false;
 }
