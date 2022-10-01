@@ -8,7 +8,7 @@
 @include('layouts.alert')
     <div class="box">
         <div class="box-header">
-            <h3>Tambah Data Guru</h3>
+            <h3>Edit Data Guru</h3>
         </div>
         <div class="box-body">
             <form action="{{ url('data-guru',$data->id) }}" method="POST">
