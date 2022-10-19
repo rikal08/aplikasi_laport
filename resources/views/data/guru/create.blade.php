@@ -15,12 +15,12 @@
                 @method('POST')
                 @csrf
                 <div class="form-group">
-                    <label for="">ID Guru</label>
-                    <input placeholder="Masukan ID Guru" type="text" value="0" class="form-control" name="id_guru">
+                    <label for="">Nama Guru</label>
+                    <input placeholder="Masukan Nama" type="text" required class="form-control" name="nama_guru">
                 </div>
                 <div class="form-group">
-                    <label for="">Nama Guru</label>
-                    <input placeholder="Masukan Nama" type="text" required class="form-control" name="name">
+                    <label for="">NIP Guru (Opsional)</label>
+                    <input placeholder="Masukan NIP Guru" type="text" value="" class="form-control" name="nip_guru">
                 </div>
                 <div class="form-group">
                     <label for="">Mata Pelajaran</label>

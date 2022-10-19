@@ -38,8 +38,8 @@
             
             <tr>
                 <td>{{ $no++; }}</td>
-                <td>{{ $item->id_guru }}</td>
-                <td>{{ $item->name }}</td>
+                <td>{{ $item->nip }}</td>
+                <td>{{ $item->nama_guru }}</td>
                 <td>{{ $item->nama_mapel }}</td>
                 <td>{{ $item->nama_extra }}</td>
                 <td>{{ $item->alamat }}</td>
@@ -47,7 +47,7 @@
                 <td>{{ $item->email }}</td>
                 <td>
                   <a href="" class="btn btn-danger"> <i class="fa fa-trash"></i></a>
-                    <a href="{{ url('data-guru/'.encrypt($item->id).'/edit') }}" class="btn btn-primary"> <i class="fa fa-edit"></i></a>
+                    <a href="{{ url('data-guru/'.encrypt($item->id_guru).'/edit') }}" class="btn btn-primary"> <i class="fa fa-edit"></i></a>
                 </td>
             </tr>
             @endforeach

@@ -21,8 +21,9 @@ class GuruController extends Controller
     public function index()
     {
         $guru = DB::table('guru')
-                    ->join('mapel','guru.id_mapel','=','mapel.id_mapel') // join ke tabel mapel
+                    ->leftjoin('mapel','guru.id_mapel','=','mapel.id_mapel') // join ke tabel mapel
                     ->leftjoin('extrakulikuler','guru.id_extra','=','extrakulikuler.id_extra') // join ke tabel mapel
+                    ->leftjoin('users','guru.id_user','=','users.id') // join ke tabel user
                     ->get();
         return view('data.guru.read',['guru'=>$guru,'no'=>1]); //return ke view
     }
@@ -37,17 +38,26 @@ class GuruController extends Controller
 
     public function store(Request $request)
     {
-        User::create([
-            'kd'=>$request->id_guru,
-            'name'=>$request->name,
-            'id_mapel' => $request->id_mapel,
-            'id_extra'=>$request->id_extra,
+        $id = rand(100,900);
+        Guru::create([
+            'nip'=>$request->nip,
+            'nama_guru'=>$request->nama_guru,
             'alamat'=>$request->alamat,
             'telepon'=>$request->telepon,
+            'id_mapel' => $request->id_mapel,
+            'id_extra'=>$request->id_extra,
+            'id_user'=>$id,
+            
+        ]);
+
+        User::create([
+            'id'=>$id,
+            'name'=>$request->nama_guru,
             'email'=>$request->email,
             'password'=>Hash::make($request->password),
             'level'=>3
         ]);
+
 
         return redirect()->back()->with('success','Data guru berhasil disimpan');
     }
@@ -55,7 +65,10 @@ class GuruController extends Controller
     public function edit($id)
     {
         $id_true = Crypt::decrypt($id);
-        $guru = Guru::findorfail($id_true);
+        $guru = DB::table('guru')
+                    ->join('users','guru.id_user','=','users.id')
+                    ->where('guru.id_guru',$id_true)
+                    ->first();
 
         $mapel = Mapel::all();
         $extra = Extra::all();
@@ -67,8 +80,8 @@ class GuruController extends Controller
     {
         $guru = Guru::findorfail($id);
         if ($request->password==true) {
-            $guru->id_guru = $request->id_guru;
-        $guru->name = $request->name;
+       
+        $guru->nama_guru = $request->nama_guru;
         $guru->id_mapel = $request->id_mapel;
         $guru->id_extra = $request->id_extra;
         $guru->alamat = $request->alamat;
@@ -76,8 +89,8 @@ class GuruController extends Controller
         $guru->email = $request->email;
         $guru->password = $request->password;
         } else {
-            $guru->id_guru = $request->id_guru;
-        $guru->name = $request->name;
+       
+        $guru->nama_guru = $request->nama_guru;
         $guru->id_mapel = $request->id_mapel;
         $guru->id_extra = $request->id_extra;
         $guru->alamat = $request->alamat;

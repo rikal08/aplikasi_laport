@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Tambah Data Guru
+    Edit Data Guru
 @endsection
 
 @section('content')
@@ -11,16 +11,16 @@
             <h3>Edit Data Guru</h3>
         </div>
         <div class="box-body">
-            <form action="{{ url('data-guru',$data->id) }}" method="POST">
+            <form action="{{ url('data-guru',$data->id_guru) }}" method="POST">
                 @method('PUt')
                 @csrf
                 <div class="form-group">
-                    <label for="">ID Guru</label>
-                    <input placeholder="Masukan ID Guru" value="{{ $data->id_guru }}" type="text" value="0" class="form-control" name="id_guru">
+                    <label for="">Nama Guru</label>
+                    <input placeholder="Masukan Nama" value="{{ $data->nama_guru }}" type="text" required class="form-control" name="name">
                 </div>
                 <div class="form-group">
-                    <label for="">Nama Guru</label>
-                    <input placeholder="Masukan Nama" value="{{ $data->name }}" type="text" required class="form-control" name="name">
+                    <label for="">NIP Guru</label>
+                    <input placeholder="Masukan NIP" value="{{ $data->nip }}" type="text" required class="form-control" name="name">
                 </div>
                 <div class="form-group">
                     <label for="">Mata Pelajaran</label>
@@ -32,12 +32,12 @@
                             <option value="{{ $item->id_mapel }}">{{ $item->nama_mapel }}</option>
                         @endif
                         @endforeach
-                    </select>
+                    </select> 
                 </div>
                 <div class="form-group">
                     <label for="">Extrakulikuler</label>
                     <select name="id_extra" class="form-control" id="">
-                        <option value="0">Tidak ada</option>
+                       
                         @foreach ($extra as $item)
                         @if ($data->id_extra == $item->id_extra)
                         <option selected value="{{ $item->id_extra }}">{{ $item->nama_extra }}</option>
