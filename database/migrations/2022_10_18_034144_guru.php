@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('alamat',100)->nullable();
             $table->string('telepon',20)->nullable();
             $table->integer('id_mapel')->nullable();
-            $table->integer('id_extra')->nullable();
             $table->integer('id_user');
             $table->timestamps();
         });

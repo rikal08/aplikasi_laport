@@ -2,12 +2,14 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GuruController;
 use App\Http\Controllers\Api\MapelController;
 use App\Http\Controllers\DataAdminController;
 use App\Http\Controllers\DataExtraController;
 use App\Http\Controllers\DataMapelController;
+use App\Http\Controllers\GuruExtraController;
+use App\Http\Controllers\GuruMapelController;
 use App\Http\Controllers\DataKepsekController;
-use App\Http\Controllers\GuruController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,7 +49,9 @@ Route::get('/data-tha',function ()
 {
    return view('data.tha.read'); 
 });
-Route::resource('/data-guru',GuruController::class);
+// Route::resource('/data-guru',GuruController::class);
+Route::resource('guru-mapel',GuruMapelController::class);
+Route::resource('guru-extra',GuruExtraController::class);
 Route::get('/data-siswa',function ()
 {
    return view('data.siswa.read'); 

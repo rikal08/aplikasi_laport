@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('extrakulikuler', function (Blueprint $table) {
             $table->id('id_extra');
             $table->string('nama_extra',100);
+            $table->timestamps();
         });
     }
 

@@ -20,7 +20,7 @@
                 </div>
                 <div class="form-group">
                     <label for="">NIP Guru (Opsional)</label>
-                    <input placeholder="Masukan NIP Guru" type="text" value="" class="form-control" name="nip_guru">
+                    <input placeholder="Masukan NIP Guru" type="text" value="" class="form-control" name="nip">
                 </div>
                 <div class="form-group">
                     <label for="">Mata Pelajaran</label>
@@ -28,15 +28,6 @@
                         <option value="0" selected>Tidak Ada</option>
                         @foreach ($mapel as $item)
                             <option value="{{ $item->id_mapel }}">{{ $item->nama_mapel }}</option>
-                        @endforeach
-                    </select>
-                </div> 
-                <div class="form-group">
-                    <label for="">Extrakulikuler</label>
-                    <select name="id_extra" class="form-control" id="">
-                        <option value="0" selected>Tidak Ada</option>
-                        @foreach ($extra as $item)
-                            <option value="{{ $item->id_extra }}">{{ $item->nama_extra }}</option>
                         @endforeach
                     </select>
                 </div>

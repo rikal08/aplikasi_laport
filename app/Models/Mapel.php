@@ -11,8 +11,6 @@ class Mapel extends Model
 
     protected $table = 'mapel';
     protected $guarded = ['id_mapel'];
-    public $timestamps = false;
-
     protected $primaryKey = 'id_mapel';
 
 }

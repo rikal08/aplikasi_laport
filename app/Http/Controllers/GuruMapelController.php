@@ -2,16 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Guru;
-use App\Models\User;
-use App\Models\Extra;
 use App\Models\Mapel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Crypt;
 
-class GuruController extends Controller
+class GuruMapelController extends Controller
 {
     public function __construct()
     {
@@ -22,7 +17,6 @@ class GuruController extends Controller
     {
         $guru = DB::table('guru')
                     ->leftjoin('mapel','guru.id_mapel','=','mapel.id_mapel') // join ke tabel mapel
-                    ->leftjoin('extrakulikuler','guru.id_extra','=','extrakulikuler.id_extra') // join ke tabel mapel
                     ->leftjoin('users','guru.id_user','=','users.id') // join ke tabel user
                     ->get();
         return view('data.guru.read',['guru'=>$guru,'no'=>1]); //return ke view
@@ -31,9 +25,7 @@ class GuruController extends Controller
     public function create()
     {
         $mapel = Mapel::all();
-        $extra = Extra::all();
-
-        return view('data.guru.create',['mapel'=>$mapel,'extra'=>$extra]);
+        return view('data.guru.create',['mapel'=>$mapel]);
     }
 
     public function store(Request $request)
@@ -115,5 +107,4 @@ class GuruController extends Controller
         return redirect()->back()->with('delete','Data Berhasil dihapus');
 
     }
-
 }

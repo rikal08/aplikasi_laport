@@ -6,6 +6,7 @@
 @endsection
 
 @section('content')
+@include('layouts.alert')
 <div class="row">
     <div class="col-xs-12">
       <div class="box">
@@ -21,10 +22,10 @@
             <thead>
             <tr>
               <th>No</th>
-              <th>ID</th>
               <th>Nama Guru</th>
+              <th>NIP</th>
               <th>Mata Pelajaran</th>
-              <th>Extrakulikuler</th>
+              
               <th>Alamat</th>
               <th>Telepon</th>
               <th>Email</th>
@@ -38,18 +39,19 @@
             
             <tr>
                 <td>{{ $no++; }}</td>
-                <td>{{ $item->nip }}</td>
                 <td>{{ $item->nama_guru }}</td>
+                <td>{{ $item->nip }}</td>
                 <td>{{ $item->nama_mapel }}</td>
-                <td>{{ $item->nama_extra }}</td>
+                
                 <td>{{ $item->alamat }}</td>
                 <td>{{ $item->telepon }}</td>
                 <td>{{ $item->email }}</td>
                 <td>
-                  <a href="" class="btn btn-danger"> <i class="fa fa-trash"></i></a>
+                  <a href="" data-toggle="modal" data-target="#modal-hapus{{ $item->id_guru }}" class="btn btn-danger"> <i class="fa fa-trash"></i></a>
                     <a href="{{ url('data-guru/'.encrypt($item->id_guru).'/edit') }}" class="btn btn-primary"> <i class="fa fa-edit"></i></a>
                 </td>
             </tr>
+            @include('data.guru.delete')
             @endforeach
             
             </tbody>

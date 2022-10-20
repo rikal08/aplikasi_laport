@@ -11,7 +11,5 @@ class Extra extends Model
 
     protected $table = 'extrakulikuler';
     protected $guarded = ['id_extra'];
-    public $timestamps = false;
-
     protected $primaryKey = 'id_extra';
 }

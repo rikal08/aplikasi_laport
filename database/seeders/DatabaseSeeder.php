@@ -15,13 +15,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
-
-        \App\Models\User::factory()->create([
-            'name' => 'Admin',
-            'email' => 'admin@gmail.com',
-            'password' => Hash::make('123'),
-            'level' => 1
+        $this->call([
+            MapelSeeder::class,
+            ExtraSeeder::class,
+            UserSeeder::class
         ]);
     }
 }
