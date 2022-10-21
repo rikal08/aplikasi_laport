@@ -11,16 +11,16 @@
             <h3>Edit Data Guru</h3>
         </div>
         <div class="box-body">
-            <form action="{{ url('data-guru',$data->id_guru) }}" method="POST">
-                @method('PUt')
+            <form action="{{ url('guru-mapel',$data->id_guru) }}" method="POST">
+                @method('PUT')
                 @csrf
                 <div class="form-group">
                     <label for="">Nama Guru</label>
-                    <input placeholder="Masukan Nama" value="{{ $data->nama_guru }}" type="text" required class="form-control" name="name">
+                    <input placeholder="Masukan Nama" value="{{ $data->nama_guru }}" type="text" required class="form-control" name="nama_guru">
                 </div>
                 <div class="form-group">
                     <label for="">NIP Guru</label>
-                    <input placeholder="Masukan NIP" value="{{ $data->nip }}" type="text" required class="form-control" name="name">
+                    <input placeholder="Masukan NIP" value="{{ $data->nip }}" type="text" required class="form-control" name="nip">
                 </div>
                 <div class="form-group">
                     <label for="">Mata Pelajaran</label>
@@ -34,19 +34,7 @@
                         @endforeach
                     </select> 
                 </div>
-                <div class="form-group">
-                    <label for="">Extrakulikuler</label>
-                    <select name="id_extra" class="form-control" id="">
-                       
-                        @foreach ($extra as $item)
-                        @if ($data->id_extra == $item->id_extra)
-                        <option selected value="{{ $item->id_extra }}">{{ $item->nama_extra }}</option>
-                        @elseif ($data->id_extra==null)
-                        <option value="{{ $item->id_extra }}">{{ $item->nama_extra }}</option>
-                        @endif
-                        @endforeach
-                    </select>
-                </div>
+                
                 <div class="form-group">
                     <label for="">Alamat</label>
                     <input placeholder="Masukan Alamat" value="{{ $data->alamat }}" type="text" required class="form-control" name="alamat">
@@ -66,7 +54,7 @@
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary">Update</button>
-                    <a href="{{ url('data-kepsek') }}" class="btn btn-danger">Batal</a>
+                    <a href="{{ url('data-guru') }}" class="btn btn-danger">Batal</a>
                 </div>
             </form>
         </div>

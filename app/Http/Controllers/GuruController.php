@@ -22,18 +22,15 @@ class GuruController extends Controller
     {
         $guru = DB::table('guru')
                     ->leftjoin('mapel','guru.id_mapel','=','mapel.id_mapel') // join ke tabel mapel
-                    ->leftjoin('extrakulikuler','guru.id_extra','=','extrakulikuler.id_extra') // join ke tabel mapel
                     ->leftjoin('users','guru.id_user','=','users.id') // join ke tabel user
                     ->get();
-        return view('data.guru.read',['guru'=>$guru,'no'=>1]); //return ke view
+        return view('data.guru-mapel.read',['guru'=>$guru,'no'=>1]); //return ke view
     }
 
     public function create()
     {
         $mapel = Mapel::all();
-        $extra = Extra::all();
-
-        return view('data.guru.create',['mapel'=>$mapel,'extra'=>$extra]);
+        return view('data.guru-mapel.create',['mapel'=>$mapel]);
     }
 
     public function store(Request $request)
@@ -47,6 +44,7 @@ class GuruController extends Controller
             'id_mapel' => $request->id_mapel,
             'id_user'=>$id,
             
+            
         ]);
 
         User::create([
@@ -58,7 +56,7 @@ class GuruController extends Controller
         ]);
 
 
-        return redirect('data-guru')->with('success','Data guru berhasil disimpan');
+        return redirect('guru-mapel')->with('success','Data guru berhasil disimpan');
     }
 
     public function edit($id)
@@ -70,38 +68,42 @@ class GuruController extends Controller
                     ->first();
 
         $mapel = Mapel::all();
-        $extra = Extra::all();
         
-        return view('data.guru.edit',['data'=>$guru,'mapel'=>$mapel,'extra'=>$extra]);
+        return view('data.guru-mapel.edit',['data'=>$guru,'mapel'=>$mapel]);
     }
 
     public function update(Request $request,$id)
     {
         $guru = Guru::findorfail($id);
+        $user = User::findorfail($guru->id_user);
         if ($request->password==true) {
         
+        $guru->nip = $request->nip;
         $guru->nama_guru = $request->nama_guru;
-        $guru->id_mapel = $request->id_mapel;
-       
         $guru->alamat = $request->alamat;
         $guru->telepon = $request->telepon;
-        $guru->email = $request->email;
-        $guru->password = $request->password;
+        $guru->id_mapel = $request->id_mapel;
+
+        $user->name = $request->nama_guru;
+        $user->email = $request->email;
+        $user->password = $request->password;
         } else {
        
+        $guru->nip = $request->nip;
         $guru->nama_guru = $request->nama_guru;
-        $guru->id_mapel = $request->id_mapel;
-       
         $guru->alamat = $request->alamat;
         $guru->telepon = $request->telepon;
-        $guru->email = $request->email;
+        $guru->id_mapel = $request->id_mapel;
+
+        $user->name = $request->nama_guru;
+        $user->email = $request->email;
         }
         
         
 
         $guru->save();
 
-        return redirect()->back()->with('success','Data guru berhasil diupdate');
+        return redirect('guru-mapel')->with('success','Data guru berhasil diupdate');
     }
 
     public function destroy($id)
@@ -115,5 +117,4 @@ class GuruController extends Controller
         return redirect()->back()->with('delete','Data Berhasil dihapus');
 
     }
-
 }

@@ -21,39 +21,34 @@
             <thead>
             <tr>
               <th>No</th>
-              <th>ID</th>
               <th>Nama Siswa</th>
+              <th>NISN</th>
               <th>Alamat</th>
+              <th>Telepon</th>
+              <th>Email</th>
               <th>Kelas</th>
               <th>Aksi</th>
             </tr>
             </thead>
             <tbody>
            
-            
+            @foreach ($siswa as $item)
+                
             <tr>
-                <td>1</td>
-                <td>123456</td>
-                <td>Rendi Saputra</td>
-                <td>Jakarta</td>
-                <td>VII A</td>
+              <td>{{ $no++ }}</td>
+                <td>{{ $item->nama_siswa }}</td>
+                <td>{{ $item->nisn }}</td>
+                <td>{{ $item->alamat }}</td>
+                <td>{{ $item->telepon }}</td>
+                <td>{{ $item->user->email }}</td>
+                <td>{{ $item->kelas->kode_kelas }}</td>
                 <td>
-                    <a href="" class="btn btn-danger"> <i class="fa fa-trash"></i></a>
-                    <a href="" class="btn btn-primary"> <i class="fa fa-edit"></i></a>
+                  <a href="" class="btn btn-danger"> <i class="fa fa-trash"></i></a>
+                  <a href="" class="btn btn-primary"> <i class="fa fa-edit"></i></a>
                 </td>
-            </tr>
+              </tr>
+              @endforeach
             
-            <tr>
-                <td>2</td>
-                <td>098765</td>
-                <td>Putri Rahayu</td>
-                <td>Jakarta</td>
-                <td>VII B</td>
-                <td>
-                    <a href="" class="btn btn-danger"> <i class="fa fa-trash"></i></a>
-                    <a href="" class="btn btn-primary"> <i class="fa fa-edit"></i></a>
-                </td>
-            </tr>
             
             
             </tbody>

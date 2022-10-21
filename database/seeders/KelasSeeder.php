@@ -6,7 +6,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-class MapelSeeder extends Seeder
+class KelasSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,13 +15,15 @@ class MapelSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('mapel')->insert([
+        DB::table('kelas')->insert([
             [
-                'nama_mapel' => 'Matematika'
+                'kode_kelas'=>'VII A',
+                'id_wali'=>1
             ],
             [
-                'nama_mapel' => 'Bahasa Inggris'
+                'kode_kelas'=>'VII B',
+                'id_wali'=>2
             ]
-        ]);
+            ]);
     }
 }

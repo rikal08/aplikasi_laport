@@ -51,7 +51,7 @@
                     <a href="{{ url('data-guru/'.encrypt($item->id_guru).'/edit') }}" class="btn btn-primary"> <i class="fa fa-edit"></i></a>
                 </td>
             </tr>
-            @include('data.guru.delete')
+            @include('data.guru-mapel.delete')
             @endforeach
             
             </tbody>
