@@ -12,4 +12,9 @@ class Kelas extends Model
     protected $primaryKey = 'id_kelas';
     protected $table = 'kelas';
     protected $guarded = ['id_kelas'];
+
+    public function guru()
+    {
+        return $this->belongsTo(Kelas::class,'id_guru');
+    }
 }

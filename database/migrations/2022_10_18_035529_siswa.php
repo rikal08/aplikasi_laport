@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('alamat',100)->nullable();
             $table->string('telepon',20)->nullable();
             $table->integer('id_kelas')->nullable();
+            $table->integer('tingkatan')->nullable();
             $table->integer('id_user');
             $table->timestamps();
         });

@@ -20,12 +20,14 @@ class SiswaSeeder extends Seeder
                 'nisn'=>'345678',
                 'nama_siswa'=>'Rendi Saputra',
                 'id_kelas'=>1,
+                'tingkatan'=>7,
                 'id_user'=>4
             ],
             [
                 'nisn'=>'667789',
                 'nama_siswa'=>'Putra Jaya',
                 'id_kelas'=>2,
+                'tingkatan'=>7,
                 'id_user'=>5
             ],
         ]);

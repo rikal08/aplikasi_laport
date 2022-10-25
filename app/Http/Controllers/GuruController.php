@@ -56,7 +56,7 @@ class GuruController extends Controller
         ]);
 
 
-        return redirect('guru-mapel')->with('success','Data guru berhasil disimpan');
+        return redirect('data-guru')->with('success','Data guru berhasil disimpan');
     }
 
     public function edit($id)
@@ -102,8 +102,8 @@ class GuruController extends Controller
         
 
         $guru->save();
-
-        return redirect('guru-mapel')->with('success','Data guru berhasil diupdate');
+        $user->save();
+        return redirect('data-guru')->with('success','Data guru berhasil diupdate');
     }
 
     public function destroy($id)

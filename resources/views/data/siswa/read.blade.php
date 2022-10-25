@@ -6,6 +6,7 @@
 @endsection
 
 @section('content')
+@include('layouts.alert')
 <div class="row">
     <div class="col-xs-12">
       <div class="box">
@@ -13,7 +14,7 @@
           <h3 class="box-title">Data Siswa</h3>
         </div>
         <div class="box-header">
-          <a href="" class="btn btn-primary"><i class="fa fa-plus"></i>Tambah Data</a>
+          <a href="{{ url('data-siswa/create') }}" class="btn btn-primary"><i class="fa fa-plus"></i>Tambah Data</a>
         </div>
         <!-- /.box-header -->
         <div class="box-body">
@@ -26,6 +27,7 @@
               <th>Alamat</th>
               <th>Telepon</th>
               <th>Email</th>
+              <th>Tingkatan</th>
               <th>Kelas</th>
               <th>Aksi</th>
             </tr>
@@ -41,12 +43,14 @@
                 <td>{{ $item->alamat }}</td>
                 <td>{{ $item->telepon }}</td>
                 <td>{{ $item->user->email }}</td>
+                <td>{{ $item->tingkatan }}</td>
                 <td>{{ $item->kelas->kode_kelas }}</td>
                 <td>
-                  <a href="" class="btn btn-danger"> <i class="fa fa-trash"></i></a>
-                  <a href="" class="btn btn-primary"> <i class="fa fa-edit"></i></a>
+                  <a href="" data-toggle="modal" data-target="#modal-hapus{{ $item->id_siswa }}" class="btn btn-danger"> <i class="fa fa-trash"></i></a>
+                  <a href="{{ url('data-siswa/'.$item->id_siswa.'/edit') }}" class="btn btn-primary"> <i class="fa fa-edit"></i></a>
                 </td>
               </tr>
+              @include('data.siswa.delete')
               @endforeach
             
             
