@@ -16,9 +16,14 @@
         <div class="box-header">
           <a href="{{ url('data-siswa/create') }}" class="btn btn-primary"><i class="fa fa-plus"></i>Tambah Data</a>
         </div>
+        <div class="box-header">
+          <a class="btn btn-danger" href="{{ url('data-siswa/7') }}">Siswa Kelas 7</a>
+          <a class="btn btn-danger" href="{{ url('data-siswa/8') }}">Siswa Kelas 8</a>
+          <a class="btn btn-danger" href="{{ url('data-siswa/9') }}">Siswa Kelas 9</a>
+        </div>
         <!-- /.box-header -->
         <div class="box-body">
-          <table id="example2" class="table table-bordered table-hover">
+          <table id="example1" style="width: 100%" class="table table-bordered table-hover">
             <thead>
             <tr>
               <th>No</th>
@@ -52,9 +57,6 @@
               </tr>
               @include('data.siswa.delete')
               @endforeach
-            
-            
-            
             </tbody>
           </table>
         </div>

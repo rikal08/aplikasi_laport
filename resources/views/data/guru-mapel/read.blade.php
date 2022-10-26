@@ -18,14 +18,13 @@
         </div>
         <!-- /.box-header -->
         <div class="box-body">
-          <table id="example2" class="table table-bordered table-hover">
+          <table id="example1" style="width: 100%" class="table table-bordered table-hover">
             <thead>
             <tr>
               <th>No</th>
               <th>Nama Guru</th>
               <th>NIP</th>
               <th>Mata Pelajaran</th>
-              
               <th>Alamat</th>
               <th>Telepon</th>
               <th>Email</th>

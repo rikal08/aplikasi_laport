@@ -15,9 +15,23 @@ class SiswaController extends Controller
         $this->middleware('auth');
     }
 
-    public function index()
+    public function index(Request $request)
+    {   
+        if($request->tingkatan){
+           $siswa = Siswa::where('tingkatan',$request->tingkatan)->get();
+
+           return response()->json();
+        }else{
+            $siswa = Siswa::all();
+            return view('data.siswa.read',['siswa'=>$siswa,'no'=>1]);
+        }
+        
+
+    }
+
+    public function show($id)
     {
-        $siswa = Siswa::all();
+        $siswa = Siswa::where('tingkatan',$id)->get();
         return view('data.siswa.read',['siswa'=>$siswa,'no'=>1]);
     }
 
