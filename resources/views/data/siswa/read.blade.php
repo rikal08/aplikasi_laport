@@ -17,6 +17,7 @@
           <a href="{{ url('data-siswa/create') }}" class="btn btn-primary"><i class="fa fa-plus"></i>Tambah Data</a>
         </div>
         <div class="box-header">
+          <a class="btn btn-success" href="{{ url('data-siswa') }}">All</a>
           <a class="btn btn-danger" href="{{ url('data-siswa/7') }}">Siswa Kelas 7</a>
           <a class="btn btn-danger" href="{{ url('data-siswa/8') }}">Siswa Kelas 8</a>
           <a class="btn btn-danger" href="{{ url('data-siswa/9') }}">Siswa Kelas 9</a>

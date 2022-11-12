@@ -47,6 +47,12 @@ class UserSeeder extends Seeder
                 'password' => Hash::make('123'),
                 'level' => 4
             ],
+            [
+                'name' => 'Bambang Suryono',
+                'email' => 'bambang@gmail.com',
+                'password' => Hash::make('123'),
+                'level' => 2
+            ],
         ]);
     }
 }

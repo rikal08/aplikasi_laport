@@ -1,4 +1,4 @@
-<li>
+{{-- <li>
     <a href="{{ url('/data-admin') }}">
       <i class="fa fa-user"></i> <span>Data Admin</span>
     </a>
@@ -7,7 +7,8 @@
     <a href="{{ url('/data-kepsek') }}">
       <i class="fa fa-user"></i> <span>Data Kepsek</span>
     </a>
-</li>
+</li> --}}
+
 <li>
   <a href="{{ url('/data-guru') }}">
     <i class="fa fa-users"></i> <span>Data Guru</span>
@@ -33,4 +34,10 @@
     <a href="{{ url('/data-tha') }}">
       <i class="fa fa-table"></i> <span>Tahun Ajaran</span>
     </a>
+</li>
+
+<li>
+  <a href="{{ url('/data-user') }}">
+    <i class="fa fa-user"></i> <span>Data User</span>
+  </a>
 </li>
