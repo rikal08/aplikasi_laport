@@ -13,6 +13,17 @@ class ThaController extends Controller
         return view('data.tha.read',['tha'=>$tha,'no'=>1]);
     }
 
+    public function store(Request $request)
+    {
+        
+        TahunAjaran::create([
+            'semester'=>$request->semester,
+            'tahun_ajaran' => $request->tahun_ajaran
+        ]);
+
+        return redirect()->back()->with('success','Data Berhasil di Simpan');
+    }
+
     public function destroy($id)
     {
         $tha = TahunAjaran::findorfail($id);

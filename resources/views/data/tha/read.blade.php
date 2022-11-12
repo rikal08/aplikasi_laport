@@ -6,6 +6,7 @@
 @endsection
 
 @section('content')
+@include('layouts.alert')
 <div class="row">
     <div class="col-xs-12">
       <div class="box">
@@ -13,7 +14,25 @@
           <h3 class="box-title">Data Tahun Ajaran</h3>
         </div>
         <div class="box-header">
-          <a href="" class="btn btn-primary"><i class="fa fa-plus"></i>Tambah Data</a>
+          <form action="{{ url('data-tha') }}" method="POST">
+            @csrf
+            @method('POST')
+              <div class="form-group">
+                <label for="">Semester</label>
+                <select name="semester" id="" class="form-control">
+                  <option value="Ganjil">Ganjil</option>
+                  <option value="Genap">Genap</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="">Tahun Ajaran</label>
+                <input type="text" class="form-control" required placeholder="Ex: 2022/2023" name="tahun_ajaran">
+              </div>
+
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary"><i class="fa fa-plus"></i>  Tambah</button>
+              </div>
+          </form>
         </div>
         <!-- /.box-header -->
         <div class="box-body">
@@ -33,9 +52,10 @@
                 <td>{{ $item->semester }}</td>
                 <td>{{ $item->tahun_ajaran }}</td>
                 <td>
-                    <a href="" class="btn btn-danger"> <i class="fa fa-trash"></i></a>
+                    <a href="" data-toggle="modal" data-target="#modal-hapus{{ $item->id_ta }}" class="btn btn-danger"> <i class="fa fa-trash"></i></a>
                 </td>
               </tr>
+              @include('data.tha.delete')
               @endforeach
             </tbody>
           </table>

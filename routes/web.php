@@ -12,6 +12,7 @@ use App\Http\Controllers\DataMapelController;
 use App\Http\Controllers\GuruExtraController;
 use App\Http\Controllers\GuruMapelController;
 use App\Http\Controllers\DataKepsekController;
+use App\Http\Controllers\KelasController;
 use App\Http\Controllers\ThaController;
 
 /*
@@ -43,11 +44,9 @@ Route::resource('/data-extra', DataExtraController::class);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-// route sementara
-Route::get('/data-kelas',function ()
-{
-   return view('data.kelas.read'); 
-});
+
+Route::resource('/data-kelas',KelasController::class);
+Route::get('/lihat-siswa/{id}', [App\Http\Controllers\KelasController::class, 'view_siswa']);
 Route::resource('/data-tha',ThaController::class);
 Route::resource('/data-guru',GuruController::class);
 

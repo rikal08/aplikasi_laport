@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('kelas', function (Blueprint $table) {
             $table->id('id_kelas');
+            $table->integer('tingkatan');
             $table->string('kode_kelas');
             $table->string('id_wali')->nullable();
             $table->timestamps();

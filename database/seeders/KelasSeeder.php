@@ -17,10 +17,12 @@ class KelasSeeder extends Seeder
     {
         DB::table('kelas')->insert([
             [
+                'tingkatan'=>'7',
                 'kode_kelas'=>'VII A',
                 'id_wali'=>1
             ],
             [
+                'tingkatan'=>'7',
                 'kode_kelas'=>'VII B',
                 'id_wali'=>2
             ]

@@ -17,14 +17,9 @@ class SiswaController extends Controller
 
     public function index(Request $request)
     {   
-        if($request->tingkatan){
-           $siswa = Siswa::where('tingkatan',$request->tingkatan)->get();
-
-           return response()->json();
-        }else{
-            $siswa = Siswa::all();
-            return view('data.siswa.read',['siswa'=>$siswa,'no'=>1]);
-        }
+    
+        $siswa = Siswa::all();
+        return view('data.siswa.read',['siswa'=>$siswa,'no'=>1]);
         
 
     }
