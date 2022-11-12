@@ -12,6 +12,7 @@ use App\Http\Controllers\DataMapelController;
 use App\Http\Controllers\GuruExtraController;
 use App\Http\Controllers\GuruMapelController;
 use App\Http\Controllers\DataKepsekController;
+use App\Http\Controllers\ThaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,7 +31,7 @@ Route::get('/', function () {
 
 Auth::routes();
 // data admin routes
-Route::resource('/data-admin',DataAdminController::class);
+#Route::resource('/data-admin',DataAdminController::class);
 
 // data kepsek routes
 Route::resource('/data-kepsek', DataKepsekController::class);
@@ -47,10 +48,7 @@ Route::get('/data-kelas',function ()
 {
    return view('data.kelas.read'); 
 });
-Route::get('/data-tha',function ()
-{
-   return view('data.tha.read'); 
-});
+Route::resource('/data-tha',ThaController::class);
 Route::resource('/data-guru',GuruController::class);
 
 Route::resource('/data-siswa',SiswaController::class);

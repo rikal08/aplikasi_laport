@@ -27,30 +27,16 @@
             </tr>
             </thead>
             <tbody>
-           
-            
-            <tr>
-                <td>1</td>
-                <td>1</td>
-                <td>2022/2023</td>
+              @foreach ($tha as $item)
+              <tr>
+                <td>{{ $no++ }}</td>
+                <td>{{ $item->semester }}</td>
+                <td>{{ $item->tahun_ajaran }}</td>
                 <td>
                     <a href="" class="btn btn-danger"> <i class="fa fa-trash"></i></a>
-                   
                 </td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>2</td>
-                <td>2022/2023</td>
-                <td>
-                    <a href="" class="btn btn-danger"> <i class="fa fa-trash"></i></a>
-                    
-                </td>
-            </tr>
-           
-          
-           
-         
+              </tr>
+              @endforeach
             </tbody>
           </table>
         </div>
