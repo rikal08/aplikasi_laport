@@ -62,6 +62,8 @@
 
         @if (Auth::user()->level==1)
             @include('menu.admin_menu')
+        @elseif(Auth::user()->level==3)
+            @include('menu.guru_menu')
         @else
             
         @endif

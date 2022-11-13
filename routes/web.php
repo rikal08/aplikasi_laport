@@ -2,9 +2,12 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ThaController;
 use App\Http\Controllers\GuruController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\KelasController;
 use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\BlankoController;
 use App\Http\Controllers\Api\MapelController;
 use App\Http\Controllers\DataAdminController;
 use App\Http\Controllers\DataExtraController;
@@ -12,8 +15,6 @@ use App\Http\Controllers\DataMapelController;
 use App\Http\Controllers\GuruExtraController;
 use App\Http\Controllers\GuruMapelController;
 use App\Http\Controllers\DataKepsekController;
-use App\Http\Controllers\KelasController;
-use App\Http\Controllers\ThaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,6 +54,8 @@ Route::resource('/data-guru',GuruController::class);
 Route::resource('/data-siswa',SiswaController::class);
 
 Route::resource('/data-user',UserController::class);
+Route::resource('/cetak-blanko',BlankoController::class);
+Route::get('/print-blanko/{id}', [App\Http\Controllers\BlankoController::class, 'print_blanko']);
 
 // // API
 
