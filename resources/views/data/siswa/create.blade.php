@@ -19,6 +19,13 @@
                     <input placeholder="Masukan Nama Siswa" type="text" required class="form-control" name="nama_siswa">
                 </div>
                 <div class="form-group">
+                    <label for="">Jenis Kelamin</label>
+                    <select name="jk" class="form-control" id="">
+                        <option value="P">P</option>
+                        <option value="L">L</option>
+                    </select>
+                </div>
+                <div class="form-group">
                     <label for="">NISN</label>
                     <input placeholder="Masukan NISN Siswa" type="text" value="" class="form-control" name="nisn">
                 </div>

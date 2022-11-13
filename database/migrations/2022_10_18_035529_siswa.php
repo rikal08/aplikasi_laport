@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id('id_siswa');
             $table->string('nisn')->nullable();
             $table->string('nama_siswa');
+            $table->string('jk');
             $table->string('alamat',100)->nullable();
             $table->string('telepon',20)->nullable();
             $table->integer('id_kelas')->nullable();

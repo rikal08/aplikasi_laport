@@ -29,6 +29,7 @@
             <tr>
               <th>No</th>
               <th>Nama Siswa</th>
+              <th>Jenis Kelamin</th>
               <th>NISN</th>
               <th>Alamat</th>
               <th>Telepon</th>
@@ -45,6 +46,7 @@
             <tr>
               <td>{{ $no++ }}</td>
                 <td>{{ $item->nama_siswa }}</td>
+                <td>{{ $item->jk }}</td>
                 <td>{{ $item->nisn }}</td>
                 <td>{{ $item->alamat }}</td>
                 <td>{{ $item->telepon }}</td>

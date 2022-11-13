@@ -19,6 +19,7 @@ class SiswaSeeder extends Seeder
             [
                 'nisn'=>'345678',
                 'nama_siswa'=>'Rendi Saputra',
+                'jk'=>'L',
                 'id_kelas'=>1,
                 'tingkatan'=>7,
                 'id_user'=>4
@@ -26,6 +27,7 @@ class SiswaSeeder extends Seeder
             [
                 'nisn'=>'667789',
                 'nama_siswa'=>'Putra Jaya',
+                'jk'=>'L',
                 'id_kelas'=>2,
                 'tingkatan'=>7,
                 'id_user'=>5

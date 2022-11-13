@@ -14,6 +14,9 @@
           <h3 class="box-title">Data Siswa</h3>
         </div>
         <div class="box-header">
+          <h3 class="box-title">Jumlah Siswa: {{ $siswa->count() }}</h3>
+        </div>
+        <div class="box-header">
             <a href="{{ url('data-kelas') }}" class="btn btn-danger">Kembali</a>
         </div>
         <!-- /.box-header -->

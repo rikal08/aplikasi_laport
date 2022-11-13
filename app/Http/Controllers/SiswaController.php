@@ -43,6 +43,7 @@ class SiswaController extends Controller
         Siswa::create([
             'nisn'=>$request->nisn,
             'nama_siswa'=>$request->nama_siswa,
+            'jk'=>$request->jk,
             'alamat'=>$request->alamat,
             'telepon'=>$request->telepon,
             'id_kelas'=>$request->id_kelas,
@@ -85,6 +86,7 @@ class SiswaController extends Controller
 
             $siswa->nisn = $request->nisn;
             $siswa->nama_siswa = $request->nama_siswa;
+            $siswa->jk=$request->jk;
             $siswa->alamat = $request->alamat;
             $siswa->telepon = $request->telepon;
             $siswa->id_kelas = $request->id_kelas;
@@ -97,6 +99,7 @@ class SiswaController extends Controller
         }else{
             $siswa->nisn = $request->nisn;
             $siswa->nama_siswa = $request->nama_siswa;
+            $siswa->jk=$request->jk;
             $siswa->alamat = $request->alamat;
             $siswa->telepon = $request->telepon;
             $siswa->id_kelas = $request->id_kelas;

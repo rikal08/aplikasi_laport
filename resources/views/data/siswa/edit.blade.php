@@ -19,6 +19,14 @@
                     <input value="{{ $siswa->nama_siswa }}" placeholder="Masukan Nama Siswa" type="text" required class="form-control" name="nama_siswa">
                 </div>
                 <div class="form-group">
+                    <label for="">Jenis Kelamin</label>
+                    <select name="jk" class="form-control" id="">
+                        <option selected value="{{ $siswa->jk }}">{{ $siswa->jk}}</option>
+                        <option value="P">P</option>
+                        <option value="L">L</option>
+                    </select>
+                </div>
+                <div class="form-group">
                     <label for="">NISN</label>
                     <input value="{{ $siswa->nisn }}" placeholder="Masukan NISN Siswa" type="text" value="" class="form-control" name="nisn">
                 </div>
