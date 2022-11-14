@@ -6,6 +6,7 @@ Home
 @section('content')
 <div class="alert alert-success">
     <h3>Selamat Datang di Sistem Raport Online</h3>
+    <h4><b>Tahun Ajaran Sekarang ({{ $tha->semester }} - {{ $tha->tahun_ajaran }})</b></h4>
 </div>
 <div class="row">
     <div class="col-lg-3 col-xs-6">
