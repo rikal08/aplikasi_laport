@@ -18,11 +18,13 @@ class TahunAjaran extends Seeder
         DB::table('tahun_ajaran')->insert([
             [
                 'semester' => 'Genap',
-                'tahun_ajaran'=> '2022/2023'
+                'tahun_ajaran'=> '2022/2023',
+                'status'=>2 #aktif
             ],
             [
                 'semester' => 'Ganjil',
-                'tahun_ajaran'=> '2022/2023'
+                'tahun_ajaran'=> '2022/2023',
+                'status'=>1 #non aktif
             ],
         ]);
     }

@@ -13,6 +13,7 @@ return new class extends Migration
             $table->id('id_ta');
             $table->string('semester');
             $table->string('tahun_ajaran')->nullable();
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }

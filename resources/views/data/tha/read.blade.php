@@ -42,6 +42,7 @@
               <th>No</th>
               <th>Semester</th>
               <th>Tahun Ajaran</th>
+              <th>Status</th>
               <th>Aksi</th>
             </tr>
             </thead>
@@ -51,6 +52,13 @@
                 <td>{{ $no++ }}</td>
                 <td>{{ $item->semester }}</td>
                 <td>{{ $item->tahun_ajaran }}</td>
+                <td>
+                  @if ($item->status==1)
+                    <span class="badge bg-red">Non Aktif</span>
+                  @else
+                  <span class="badge bg-green">Aktif</span> 
+                  @endif
+                </td>
                 <td>
                     <a href="" data-toggle="modal" data-target="#modal-hapus{{ $item->id_ta }}" class="btn btn-danger"> <i class="fa fa-trash"></i></a>
                 </td>
