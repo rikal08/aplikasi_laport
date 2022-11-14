@@ -61,6 +61,7 @@
                 </td>
                 <td>
                     <a href="" data-toggle="modal" data-target="#modal-hapus{{ $item->id_ta }}" class="btn btn-danger"> <i class="fa fa-trash"></i></a>
+                    <a href="" data-toggle="modal" data-target="#modal-update{{ $item->id_ta }}" class="btn btn-success"> <i class="fa fa-check"></i> Aktivkan</a>
                 </td>
               </tr>
               @include('data.tha.delete')
