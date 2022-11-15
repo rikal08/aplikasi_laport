@@ -13,9 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('extrakulikuler', function (Blueprint $table) {
-            $table->id('id_extra');
-            $table->string('nama_extra',100);
+        Schema::create('format_raport', function (Blueprint $table) {
+            $table->id('id_format');
+            $table->string('nama_format');
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('extrakulikuler');
+        Schema::dropIfExists('format_raport');
     }
 };

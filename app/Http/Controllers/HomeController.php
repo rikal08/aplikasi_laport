@@ -6,6 +6,7 @@ use App\Models\Guru;
 use App\Models\Kelas;
 use App\Models\Mapel;
 use App\Models\Siswa;
+use App\Models\DataSekolah as ModelDataSekolah;
 use App\Models\TahunAjaran;
 use Illuminate\Http\Request;
 
@@ -33,6 +34,7 @@ class HomeController extends Controller
         $kelas = Kelas::all();
         $mapel = Mapel::all();
         $tha = TahunAjaran::where('status',2)->first();
-        return view('home',['siswa'=>$siswa,'guru'=>$guru,'kelas'=>$kelas,'mapel'=>$mapel,'tha'=>$tha]);
+        $ds = ModelDataSekolah::all()->first();
+        return view('home',['siswa'=>$siswa,'guru'=>$guru,'kelas'=>$kelas,'mapel'=>$mapel,'tha'=>$tha,'ds'=>$ds]);
     }
 }

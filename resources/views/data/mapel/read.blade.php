@@ -34,6 +34,7 @@
             <tr>
               <th>No</th>
               <th>Nama Mata Pelajaran</th>
+              <th>Type</th>
               <th>Aksi</th>
             </tr>
             </thead>
@@ -44,6 +45,13 @@
             <tr>
               <td>{{ $no++ }}</td>
               <td>{{ $item->nama_mapel }}</td>
+              <td>
+                @if ($item->type==1)
+                  <span class="badge bg-blue">Mata Pelajaran</span>
+                @else
+                  <span class="badge bg-green">Ekstrakulikuler</span>    
+                @endif
+              </td>
               <td>
                 <a href="" data-toggle="modal" data-target="#modal-hapus{{ $item->id_mapel }}" class="btn btn-danger"> <i class="fa fa-trash"></i></a>
                 

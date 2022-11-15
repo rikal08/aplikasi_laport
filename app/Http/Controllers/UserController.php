@@ -67,4 +67,10 @@ class UserController extends Controller
         return redirect()->back()->with('delete','Data Berhasil dihapus');
 
     }
+
+    public function show($id)
+    {
+        $user = User::findorfail($id);
+        return view('data.user.edit',['data'=>$user]);
+    }
 }

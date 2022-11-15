@@ -10,6 +10,12 @@
 </li> --}}
 
 <li>
+  <a href="{{ url('/format-raport') }}">
+    <i class="fa fa-book"></i> <span>Format Raport</span>
+  </a>
+</li>
+
+<li>
   <a href="{{ url('/data-guru') }}">
     <i class="fa fa-users"></i> <span>Data Guru</span>
   </a>
@@ -39,5 +45,16 @@
 <li>
   <a href="{{ url('/data-user') }}">
     <i class="fa fa-user"></i> <span>Data User</span>
+  </a>
+</li>
+<li class="header">Setting</li>  
+<li>
+  <a href="{{ url('/data-sekolah') }}">
+    <i class="fa fa-home"></i> <span>Data Sekolah</span>
+  </a>
+</li>
+<li>
+  <a href="{{ url('data-user/'.Auth::user()->id) }}">
+    <i class="fa fa-gear"></i> <span>Akun</span>
   </a>
 </li>

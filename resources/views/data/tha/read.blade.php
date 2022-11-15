@@ -56,15 +56,18 @@
                   @if ($item->status==1)
                     <span class="badge bg-red">Non Aktif</span>
                   @else
-                  <span class="badge bg-green">Aktif</span> 
+                    <span class="badge bg-green">Aktif</span> 
                   @endif
                 </td>
                 <td>
                     <a href="" data-toggle="modal" data-target="#modal-hapus{{ $item->id_ta }}" class="btn btn-danger"> <i class="fa fa-trash"></i></a>
-                    <a href="" data-toggle="modal" data-target="#modal-update{{ $item->id_ta }}" class="btn btn-success"> <i class="fa fa-check"></i> Aktivkan</a>
+                    @if ($item->status==1)
+                    <a href="" data-toggle="modal" data-target="#modal-update{{ $item->id_ta }}" class="btn btn-success"> <i class="fa fa-check"></i> Aktif</a>
+                    @endif
                 </td>
               </tr>
               @include('data.tha.delete')
+              @include('data.tha.aktif')
               @endforeach
             </tbody>
           </table>

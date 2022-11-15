@@ -33,7 +33,7 @@
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary">Update</button>
-                    <a href="{{ url('data-user') }}" class="btn btn-danger">Batal</a>
+                    
                 </div>
             </form>
         </div>

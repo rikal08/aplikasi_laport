@@ -17,11 +17,53 @@ class MapelSeeder extends Seeder
     {
         DB::table('mapel')->insert([
             [
-                'nama_mapel' => 'Matematika'
+                'nama_mapel' => 'Pendidikan Agama dan Budi Pekerti',
+                'type'=>1
             ],
             [
-                'nama_mapel' => 'Bahasa Inggris'
-            ]
+                'nama_mapel' => 'Pendidikan Pancasila',
+                'type'=>1
+            ],
+            [
+                'nama_mapel' => 'Bahasa Indonesia',
+                'type'=>1
+            ],
+            [
+                'nama_mapel' => 'Matematika',
+                'type'=>1
+            ],
+            [
+                'nama_mapel' => 'Ilmu Pengetahuan Alam',
+                'type'=>1
+            ],
+            [
+                'nama_mapel' => 'Ilmu Pengetahuan Sosial',
+                'type'=>1
+            ],
+            [
+                'nama_mapel' => 'Bahasa Inggris',
+                'type'=>1
+            ],
+            [
+                'nama_mapel' => 'Pendidikan Jasmani, Olahraga dan Kesehatan',
+                'type'=>1
+            ],
+            [
+                'nama_mapel' => 'Informatika',
+                'type'=>1
+            ],
+            [
+                'nama_mapel' => 'Seni Tari',
+                'type'=>1
+            ],
+            [
+                'nama_mapel' => 'Pramuka',
+                'type'=>2
+            ],
+            [
+                'nama_mapel' => 'Paskibra',
+                'type'=>2
+            ],
         ]);
     }
 }

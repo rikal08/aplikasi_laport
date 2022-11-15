@@ -4,6 +4,51 @@
 Home    
 @endsection
 @section('content')
+<div class="alert alert-warning">
+  <h3>Data Sekolah</h3>
+  <table style="width: 40%">
+    <tr>
+      <td>NPSN</td>
+      <td>:</td>
+      <td><b>{{ $ds->npsn }}</b></td>
+    </tr>
+    <tr>
+      <td>Nama Sekolah</td>
+      <td>:</td>
+      <td><b>{{ $ds->nama_sekolah }}</b></td>
+    </tr>
+    <tr>
+      <td>Jenjang Pendidikan</td>
+      <td>:</td>
+      <td><b>{{ $ds->jenjang }}</b></td>
+    </tr>
+    <tr>
+      <td>Akreditasi</td>
+      <td>:</td>
+      <td><b>{{ $ds->akreditasi }}</b></td>
+    </tr>
+    <tr>
+      <td>Alamat</td>
+      <td>:</td>
+      <td><b>{{ $ds->alamat }}</b></td>
+    </tr>
+    <tr>
+      <td>Kode Pos</td>
+      <td>:</td>
+      <td><b>{{ $ds->kode_pos }}</b></td>
+    </tr>
+    <tr>
+      <td>Telepon</td>
+      <td>:</td>
+      <td><b>{{ $ds->telepon }}</b></td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td>:</td>
+      <td><b>{{ $ds->email }}</b></td>
+    </tr>
+  </table>
+</div>
 <div class="alert alert-success">
     <h3>Selamat Datang di Sistem Raport Online</h3>
     <h4><b>Tahun Ajaran Sekarang ({{ $tha->semester }} - {{ $tha->tahun_ajaran }})</b></h4>
@@ -21,7 +66,9 @@ Home
         <div class="icon">
           <i class="ion ion-person"></i>
         </div>
+        @if (Auth::user()->level==1)
         <a href="{{ url('data-guru') }}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+        @endif
       </div>
     </div>
     <!-- ./col -->
@@ -36,7 +83,9 @@ Home
         <div class="icon">
           <i class="ion ion-person"></i>
         </div>
+        @if (Auth::user()->level==1)
         <a href="{{ url('data-siswa') }}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+        @endif
       </div>
     </div>
     <!-- ./col -->
@@ -51,7 +100,9 @@ Home
         <div class="icon">
           <i class="fa fa-star"></i>
         </div>
+        @if (Auth::user()->level==1)
         <a href="{{ url('data-kelas') }}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+        @endif
       </div>
     </div>
     <!-- ./col -->
@@ -66,9 +117,14 @@ Home
         <div class="icon">
           <i class="ion ion-folder"></i>
         </div>
+        @if (Auth::user()->level==1)
+            
         <a href="{{ url('data-mapel') }}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+        @endif
       </div>
     </div>
     <!-- ./col -->
   </div>
+
+  
 @endsection

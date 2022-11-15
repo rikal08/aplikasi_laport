@@ -15,6 +15,8 @@ use App\Http\Controllers\DataMapelController;
 use App\Http\Controllers\GuruExtraController;
 use App\Http\Controllers\GuruMapelController;
 use App\Http\Controllers\DataKepsekController;
+use App\Http\Controllers\DataSekolah;
+use App\Http\Controllers\ModelRaportController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,6 +58,10 @@ Route::resource('/data-siswa',SiswaController::class);
 Route::resource('/data-user',UserController::class);
 Route::resource('/cetak-blanko',BlankoController::class);
 Route::get('/print-blanko/{id}', [App\Http\Controllers\BlankoController::class, 'print_blanko']);
+Route::resource('data-sekolah',DataSekolah::class);
+Route::resource('format-raport',ModelRaportController::class);
+Route::get('/format-raport-1/{id}', [App\Http\Controllers\ModelRaportController::class, 'format_raport_1']);
+Route::get('/format-raport-2/{id}', [App\Http\Controllers\ModelRaportController::class, 'format_raport_2']);
 
 // // API
 

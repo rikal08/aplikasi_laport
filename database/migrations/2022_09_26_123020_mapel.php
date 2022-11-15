@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('mapel', function (Blueprint $table) {
             $table->id('id_mapel');
             $table->string('nama_mapel',100);
+            $table->integer('type')->nullable(); #1=mata pelajaran 2= extrakulikuler
             $table->timestamps();
         });
     }
