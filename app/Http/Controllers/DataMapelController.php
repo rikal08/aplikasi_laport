@@ -24,7 +24,10 @@ class DataMapelController extends Controller
     public function store(Request $request)
     {
         Mapel::create([
-            'nama_mapel'=>$request->nama_mapel
+            'nama_mapel'=>$request->nama_mapel,
+            'type'=>$request->type,
+            'kurikulum'=>$request->kurikulum,
+            'kelompok'=>$request->kelompok,
         ]);
 
         return redirect()->back()->with('success','Data Berhasil di Simpan');

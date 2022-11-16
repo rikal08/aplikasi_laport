@@ -23,7 +23,8 @@ class DatabaseSeeder extends Seeder
             SiswaSeeder::class,
             TahunAjaran::class,
             DataSekolahSeed::class,
-            FormatRaport::class
+            FormatRaport::class,
+            NilaiMapelMerdeka::class
         ]);
     }
 }

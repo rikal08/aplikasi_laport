@@ -7,13 +7,20 @@ Cetak Blanko Absensi
 @section('content')
 @foreach ($kelas as $item)
 <div class="row">
+  <div class="col-lg-4">
+    <div class="alert bg-info">
+      <p>Silahkan pilih kelas untuk cetak blanko absensi</p>
+    </div>
+  </div>
+</div>
+<div class="row">
     <div class="col-lg-3 col-xs-6">
       <!-- small box -->
       <div class="small-box bg-aqua">
         <div class="inner">
           <h3>{{ $item->kode_kelas }}</h3>
 
-          <p>Jumlah Guru</p>
+          <p></p>
         </div>
         <div class="icon">
           <i class="ion ion-person"></i>

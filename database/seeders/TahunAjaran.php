@@ -17,12 +17,12 @@ class TahunAjaran extends Seeder
     {
         DB::table('tahun_ajaran')->insert([
             [
-                'semester' => 'Ganjil',
+                'semester' => 1,
                 'tahun_ajaran'=> '2022/2023',
                 'status'=>1 #aktif
             ],
             [
-                'semester' => 'Genap',
+                'semester' => 2,
                 'tahun_ajaran'=> '2022/2023',
                 'status'=>2 #non aktif
             ],

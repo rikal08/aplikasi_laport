@@ -20,8 +20,8 @@
               <div class="form-group">
                 <label for="">Semester</label>
                 <select name="semester" id="" class="form-control">
-                  <option value="Ganjil">Ganjil</option>
-                  <option value="Genap">Genap</option>
+                  <option value="1">1 (Satu)</option>
+                  <option value="2">2 (Dua)</option>
                 </select>
               </div>
               <div class="form-group">

@@ -55,6 +55,54 @@
   })
 </script>
 
+<script type="text/javascript">
+  var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+  $(document).ready(function(){
+    $('#pilih_ta').change(function(){
+      var id_tahun_ajaran = $('#pilih_ta').val();
+      var id_kelas = $('#id_kelas').val();
+      
+      
+      $.ajax({
+        url:'get-nilai',
+        type:'post',
+        data: {_token: CSRF_TOKEN, id_tahun_ajaran:id_tahun_ajaran,id_kelas:id_kelas},
+        dataType: 'json',
+          success: function(response){
+            createRows(response);
+        }
+      });
+    });
+  });
+
+  function createRows(response){
+      var len = 0;
+      $('#example2 tbody').empty(); // Empty <tbody>
+      if(response['data'] != null){
+         len = response['data'].length;
+      }
+
+      if(len>0){
+        for(var i=0; i<len;i++){
+          var nisn_siswa = response['data'][i].nisn_siswa;
+          var nilai_akhir = response['data'][i].nilai_akhir;
+          var nama_siswa = response['data'][i].nama_siswa;
+          var capaian = response['data'][i].capaian;
+
+          var tr_str = "<tr>" +
+             "<td align='center'>" + (i+1) + "</td>" +
+             "<td align='left'>" + nisn_siswa + "</td>" +
+             "<td align='left'>" + nama_siswa + "</td>" +
+             "<td align='center'>" + nilai_akhir + "</td>" +
+             "<td align='left'>" + capaian + "</td>" +
+             "<td align='left'><a class='btn btn-primary'> Edit</a></td>" +
+           "</tr>";
+
+           $("#example2 tbody").append(tr_str);
+        }
+      }
+    }
+</script>
 
 </body>
 </html>

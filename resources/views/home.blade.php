@@ -52,7 +52,7 @@ Home
 <div class="alert alert-success">
     <h3>Selamat Datang di Sistem Raport Online</h3>
     <h4><b>Tahun Ajaran Sekarang ({{ $tha->semester }} - {{ $tha->tahun_ajaran }})</b></h4>
-    <p>* Buka menu Tahun Ajaran untuk merubah tahun ajaran saat ini</p>
+    <p>* Buka menu Tahun Ajaran untuk merubah tahun ajaran saat ini (Hanya admin yang dapat merubah)</p>
 </div>
 <div class="row">
     <div class="col-lg-3 col-xs-6">
@@ -125,6 +125,20 @@ Home
     </div>
     <!-- ./col -->
   </div>
+
+  @if (Auth::user()->level==3)
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="alert alert-danger">
+        <h4>Informasi Guru:</h4>
+        <p>Nama Guru: {{ $guru_login->nama_guru }}</p>
+        <p>NIP: {{ $guru_login->nama_guru }}</p>
+        <p>Mata Pelajaran: {{ $guru_login->nama_mapel }}</p>
+        <p>Wali Kelas : {{ $guru_login->kode_kelas }}</p>
+      </div>
+    </div>
+  </div>
+  @endif
 
   
 @endsection

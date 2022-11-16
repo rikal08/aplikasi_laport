@@ -21,6 +21,29 @@
                   <label for="">Nama Mata Pelajaran</label>
                   <input placeholder="Masukan Nama Mata Pelajaran" type="text" class="form-control" name="nama_mapel" required>
                 </div>
+                <div class="form-group">
+                  <label for="">Type</label>
+                  <select name="type" class="form-control" id="">
+                    <option value="1">Mata Pelajaran</option>
+                    <option value="2">Extrakulikuler</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="">Kurikulum</label>
+                  <select name="kurikulum" class="form-control" id="">
+                    <option value="3">K13 & Merdeka</option>
+                    <option value="1">K13</option>
+                    <option value="2">Merdeka</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="">Kelompok (Pilih Jika Memilih Kurikulum K13)</label>
+                  <select name="kelompok" class="form-control" id="">
+                    <option value="-">-Pilik Kelompok-</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                  </select>
+                </div>
 
                 <div class="form-group">
                   <button type="submit" class="btn btn-primary"><i class="fa fa-plus"></i>  Tambah</button>
@@ -35,6 +58,8 @@
               <th>No</th>
               <th>Nama Mata Pelajaran</th>
               <th>Type</th>
+              <th>Kurikulum</th>
+              <th>Kelompok</th>
               <th>Aksi</th>
             </tr>
             </thead>
@@ -52,6 +77,16 @@
                   <span class="badge bg-green">Ekstrakulikuler</span>    
                 @endif
               </td>
+              <td>
+                @if ($item->kurikulum==1)
+                  <span class="badge bg-blue">K13</span>
+                @elseif($item->kurikulum==2)
+                  <span class="badge bg-green">Merdeka</span>
+                @else 
+                <span class="badge bg-red">K13 & Merdeka</span>   
+                @endif
+              </td>
+              <td>{{ $item->kelompok }}</td>
               <td>
                 <a href="" data-toggle="modal" data-target="#modal-hapus{{ $item->id_mapel }}" class="btn btn-danger"> <i class="fa fa-trash"></i></a>
                 

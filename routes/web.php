@@ -17,6 +17,7 @@ use App\Http\Controllers\GuruMapelController;
 use App\Http\Controllers\DataKepsekController;
 use App\Http\Controllers\DataSekolah;
 use App\Http\Controllers\ModelRaportController;
+use App\Http\Controllers\NilaiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,6 +63,8 @@ Route::resource('data-sekolah',DataSekolah::class);
 Route::resource('format-raport',ModelRaportController::class);
 Route::get('/format-raport-1/{id}', [App\Http\Controllers\ModelRaportController::class, 'format_raport_1']);
 Route::get('/format-raport-2/{id}', [App\Http\Controllers\ModelRaportController::class, 'format_raport_2']);
+Route::resource('data-nilai',NilaiController::class);
+Route::post('data-nilai/get-nilai',[App\Http\Controllers\NilaiController::class,'get_nilai']);
 
 // // API
 

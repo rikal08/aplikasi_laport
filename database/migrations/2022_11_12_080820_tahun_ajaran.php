@@ -11,7 +11,7 @@ return new class extends Migration
     {
         Schema::create('tahun_ajaran', function (Blueprint $table) {
             $table->id('id_ta');
-            $table->string('semester');
+            $table->integer('semester');
             $table->string('tahun_ajaran')->nullable();
             $table->string('status')->nullable();
             $table->timestamps();
