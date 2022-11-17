@@ -28,6 +28,12 @@ class GuruSeeder extends Seeder
                 'id_mapel'=>2,
                 'id_user'=>3
             ],
+            [
+                'nip'=>'43643646436436',
+                'nama_guru'=>'Budi Sanjaya, Sp.d',
+                'id_mapel'=>3,
+                'id_user'=>7
+            ],
         ]);
     }
 }

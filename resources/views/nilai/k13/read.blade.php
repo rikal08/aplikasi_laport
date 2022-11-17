@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Data Nilai
+    Data Nilai Kurikulum K13
 @endsection
 
 @section('content')
@@ -47,7 +47,7 @@
                 <td>Tahun Ajaran</td>
                 <td>:</td>
                 <td>
-                    <select name="" class="form-control" id="pilih_ta">
+                    <select name="" class="form-control" id="pilih_ta_2">
                         <option value="0">Pilih Tahun Ajaran</option>
                         @foreach ($ta as $item)
                             <option value="{{ $item->id_ta }}">
@@ -60,7 +60,7 @@
                     </select>
                     
                 </td>
-                <td><button type="button" id="pilih_tha" class="btn btn-danger">Cari</button></td>
+                <td><button type="button" id="pilih_tha_2" class="btn btn-danger">Cari</button></td>
             </tr>
         </table>
       </div>
@@ -83,7 +83,7 @@
                 </select>
             </div>
             <div class="form-group">
-                <button type="button" id="btn_input_nilai" class="btn btn-success">Input Nilai</button>
+                <button type="button" id="btn_input_nilai_2" class="btn btn-success">Input Nilai</button>
             </div>
 
             <div id="alert_success">
@@ -92,9 +92,7 @@
         </div>
     </div>
 </div>
-<div id="proses-input">
 
-</div>
 <div class="row">
     <div class="col-xs-12">
       <div class="box">
@@ -106,16 +104,24 @@
           <table id="example1" style="width: 100%" class="table table-bordered table-hover">
             <thead>
             <tr>
-              <th>No</th>
-              <th>NISN Siswa</th>
-              <th>Nama Siswa</th>
-              <th>Nilai</th>
-              <th>Capaian Kompetensi</th>
-              <th>Aksi</th>
+              <th rowspan="2">No</th>
+              <th rowspan="2">NISN Siswa</th>
+              <th rowspan="2">Nama Siswa</th>
+              <th style="text-align: center;background-color: rgb(72, 243, 243);" colspan="3">Capaian</th>
+              <th style="text-align: center;background-color: rgb(59, 248, 138)" colspan="3">Deskripsi</th>
+              <th rowspan="2">Aksi</th>
+            </tr>
+            <tr>
+                <th style="background-color: rgb(72, 243, 243);">Pengetahuan (KI3)</th>
+                <th style="background-color: rgb(72, 243, 243)">Keterampilan (KI4)</th>
+                <th style="background-color: rgb(72, 243, 243)">Sikap (SB/B/C/K)</th>
+                <th style="background-color: rgb(59, 248, 138)">Pengetahuan</th>
+                <th style="background-color: rgb(59, 248, 138)">Keterampilan</th>
+                <th style="background-color: rgb(59, 248, 138)">Sikap Spritual dan Sosial</th>
             </tr>
             </thead>
             <tbody>
-                @include('nilai.k_merdeka.update')
+                @include('nilai.k13.update')
             </tbody>
           </table>
         </div>

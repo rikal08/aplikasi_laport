@@ -32,6 +32,38 @@ class SiswaSeeder extends Seeder
                 'tingkatan'=>7,
                 'id_user'=>5
             ],
+            [
+                'nisn'=>'898989',
+                'nama_siswa'=>'Suci Putri',
+                'jk'=>'P',
+                'id_kelas'=>1,
+                'tingkatan'=>7,
+                'id_user'=>8
+            ],
+            [
+                'nisn'=>'767676',
+                'nama_siswa'=>'Rani',
+                'jk'=>'P',
+                'id_kelas'=>2,
+                'tingkatan'=>7,
+                'id_user'=>9
+            ],
+            [
+                'nisn'=>'65765657',
+                'nama_siswa'=>'Raihan',
+                'jk'=>'P',
+                'id_kelas'=>3,
+                'tingkatan'=>8,
+                'id_user'=>10
+            ],
+            [
+                'nisn'=>'45464748',
+                'nama_siswa'=>'Rianza',
+                'jk'=>'P',
+                'id_kelas'=>3,
+                'tingkatan'=>8,
+                'id_user'=>11
+            ],
         ]);
     }
 }

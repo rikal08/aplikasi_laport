@@ -18,11 +18,11 @@ class UserSeeder extends Seeder
     {
         DB::table('users')->insert([
             [
-            'name' => 'Admin',
-            'telepon' => '0852448890',
-            'email' => 'admin@gmail.com',
-            'password' => Hash::make('123'),
-            'level' => 1
+                'name' => 'Admin',
+                'telepon' => '0852448890',
+                'email' => 'admin@gmail.com',
+                'password' => Hash::make('123'),
+                'level' => 1
             ],
             [
                 'name' => 'Suci Putri,Sp.d',
@@ -58,6 +58,41 @@ class UserSeeder extends Seeder
                 'email' => 'bambang@gmail.com',
                 'password' => Hash::make('123'),
                 'level' => 2
+            ],
+            [
+                'name' => 'Budi Sanjaya, Sp.d',
+                'telepon' => '0852448890',
+                'email' => 'budi@gmail.com',
+                'password' => Hash::make('123'),
+                'level' => 3
+            ],
+            [
+                'name' => 'Suci Putri',
+                'telepon' => '0852448890',
+                'email' => 'suciputri@gmail.com',
+                'password' => Hash::make('123'),
+                'level' => 4
+            ],
+            [
+                'name' => 'Rani',
+                'telepon' => '0852448890',
+                'email' => 'rani@gmail.com',
+                'password' => Hash::make('123'),
+                'level' => 4
+            ],
+            [
+                'name' => 'Rehan',
+                'telepon' => '0852448890',
+                'email' => 'rehan@gmail.com',
+                'password' => Hash::make('123'),
+                'level' => 4
+            ],
+            [
+                'name' => 'Rianza',
+                'telepon' => '0852448890',
+                'email' => 'rianza@gmail.com',
+                'password' => Hash::make('123'),
+                'level' => 4
             ],
         ]);
     }

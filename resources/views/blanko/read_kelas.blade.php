@@ -5,7 +5,8 @@ Cetak Blanko Absensi
 @endsection
 
 @section('content')
-@foreach ($kelas as $item)
+
+@forelse ($kelas as $item)
 <div class="row">
   <div class="col-lg-4">
     <div class="alert bg-info">
@@ -30,5 +31,15 @@ Cetak Blanko Absensi
     </div>
     <!-- ./col -->
 </div>
-@endforeach
+@empty
+<div class="row">
+  <div class="col-lg-6">
+    <div class="alert alert-danger">
+      <p>Maaf! anda tidak bisa mencetak blanko Absensi karna Anda bukan wali Kelas dari kelas manapun!</p>
+      <p>* Silahkan hubungi operator/admin bahwa anda adalah wali kelas</p>
+  </div>
+  </div>
+</div>    
+@endforelse
+
 @endsection

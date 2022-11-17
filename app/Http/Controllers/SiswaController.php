@@ -18,7 +18,7 @@ class SiswaController extends Controller
     public function index(Request $request)
     {   
     
-        $siswa = Siswa::all();
+        $siswa = Siswa::orderBy('id_kelas','ASC')->get();
         return view('data.siswa.read',['siswa'=>$siswa,'no'=>1]);
         
 

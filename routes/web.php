@@ -65,6 +65,8 @@ Route::get('/format-raport-1/{id}', [App\Http\Controllers\ModelRaportController:
 Route::get('/format-raport-2/{id}', [App\Http\Controllers\ModelRaportController::class, 'format_raport_2']);
 Route::resource('data-nilai',NilaiController::class);
 Route::post('data-nilai/get-nilai',[App\Http\Controllers\NilaiController::class,'get_nilai']);
+Route::post('data-nilai/input-nilai',[App\Http\Controllers\NilaiController::class,'input_nilai']);
+Route::post('data-nilai/update-nilai',[App\Http\Controllers\NilaiController::class,'update_nilai']);
 
 // // API
 
