@@ -14,8 +14,9 @@ class NilaiController extends Controller
 {
     public function index()
     {
+        $guru = Guru::where('id_user',Auth::user()->id)->first();
         $kelas = Kelas::all();
-        return view('nilai.pilih_kelas',['kelas'=>$kelas]);
+        return view('nilai.pilih_kelas',['kelas'=>$kelas,'guru'=>$guru]);
     }
 
     public function show($id)

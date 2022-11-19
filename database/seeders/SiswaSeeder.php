@@ -28,7 +28,7 @@ class SiswaSeeder extends Seeder
                 'nisn'=>'667789',
                 'nama_siswa'=>'Putra Jaya',
                 'jk'=>'L',
-                'id_kelas'=>2,
+                'id_kelas'=>1,
                 'tingkatan'=>7,
                 'id_user'=>5
             ],
@@ -36,8 +36,8 @@ class SiswaSeeder extends Seeder
                 'nisn'=>'898989',
                 'nama_siswa'=>'Suci Putri',
                 'jk'=>'P',
-                'id_kelas'=>1,
-                'tingkatan'=>7,
+                'id_kelas'=>2,
+                'tingkatan'=>8,
                 'id_user'=>8
             ],
             [
@@ -45,7 +45,7 @@ class SiswaSeeder extends Seeder
                 'nama_siswa'=>'Rani',
                 'jk'=>'P',
                 'id_kelas'=>2,
-                'tingkatan'=>7,
+                'tingkatan'=>8,
                 'id_user'=>9
             ],
             [
@@ -53,7 +53,7 @@ class SiswaSeeder extends Seeder
                 'nama_siswa'=>'Raihan',
                 'jk'=>'P',
                 'id_kelas'=>3,
-                'tingkatan'=>8,
+                'tingkatan'=>9,
                 'id_user'=>10
             ],
             [
@@ -61,7 +61,7 @@ class SiswaSeeder extends Seeder
                 'nama_siswa'=>'Rianza',
                 'jk'=>'P',
                 'id_kelas'=>3,
-                'tingkatan'=>8,
+                'tingkatan'=>9,
                 'id_user'=>11
             ],
         ]);

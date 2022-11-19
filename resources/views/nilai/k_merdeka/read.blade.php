@@ -96,6 +96,11 @@
 
 </div>
 <div class="row">
+    <div class="col-lg-4">
+        <a href="{{ url('data-nilai') }}" class="btn btn-danger">Kembali</a>
+    </div>
+</div>
+<div class="row">
     <div class="col-xs-12">
       <div class="box">
         <div class="box-header">

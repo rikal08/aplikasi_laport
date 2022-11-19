@@ -5,6 +5,15 @@
 @endsection
 
 @section('content')
+@if ($guru->mapel->type==2)
+<div class="row">
+  <div class="col-lg-4">
+    <div class="alert bg-red">
+      <p>Anda tidak bisa mengakses halaman ini, karna anda adalah guru Extrakulikuler</p>
+    </div>
+  </div>
+</div>
+@else
 <div class="row">
   <div class="col-lg-4">
     <div class="alert bg-green">
@@ -48,4 +57,6 @@ $bg = 'blue';
     <!-- ./col -->
     @endforeach
 </div>
+@endif
+
 @endsection

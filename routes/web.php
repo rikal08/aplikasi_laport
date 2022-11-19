@@ -1,11 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\DataSekolah;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ThaController;
 use App\Http\Controllers\GuruController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\KelasController;
+use App\Http\Controllers\NilaiController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\BlankoController;
 use App\Http\Controllers\Api\MapelController;
@@ -15,9 +17,8 @@ use App\Http\Controllers\DataMapelController;
 use App\Http\Controllers\GuruExtraController;
 use App\Http\Controllers\GuruMapelController;
 use App\Http\Controllers\DataKepsekController;
-use App\Http\Controllers\DataSekolah;
+use App\Http\Controllers\NilaiExtraController;
 use App\Http\Controllers\ModelRaportController;
-use App\Http\Controllers\NilaiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -67,6 +68,8 @@ Route::resource('data-nilai',NilaiController::class);
 Route::post('data-nilai/get-nilai',[App\Http\Controllers\NilaiController::class,'get_nilai']);
 Route::post('data-nilai/input-nilai',[App\Http\Controllers\NilaiController::class,'input_nilai']);
 Route::post('data-nilai/update-nilai',[App\Http\Controllers\NilaiController::class,'update_nilai']);
+
+Route::resource('data-nilai-extra',NilaiExtraController::class);
 
 // // API
 

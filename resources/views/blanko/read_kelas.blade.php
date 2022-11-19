@@ -6,7 +6,6 @@ Cetak Blanko Absensi
 
 @section('content')
 
-@forelse ($kelas as $item)
 <div class="row">
   <div class="col-lg-4">
     <div class="alert bg-info">
@@ -15,6 +14,7 @@ Cetak Blanko Absensi
   </div>
 </div>
 <div class="row">
+  @forelse ($kelas as $item)
     <div class="col-lg-3 col-xs-6">
       <!-- small box -->
       <div class="small-box bg-aqua">
@@ -30,16 +30,16 @@ Cetak Blanko Absensi
       </div>
     </div>
     <!-- ./col -->
+    @empty
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="alert alert-danger">
+          <p>Maaf! anda tidak bisa mencetak blanko Absensi karna Anda bukan wali Kelas dari kelas manapun!</p>
+          <p>* Silahkan hubungi operator/admin bahwa anda adalah wali kelas</p>
+      </div>
+      </div>
+    </div>    
+    @endforelse
 </div>
-@empty
-<div class="row">
-  <div class="col-lg-6">
-    <div class="alert alert-danger">
-      <p>Maaf! anda tidak bisa mencetak blanko Absensi karna Anda bukan wali Kelas dari kelas manapun!</p>
-      <p>* Silahkan hubungi operator/admin bahwa anda adalah wali kelas</p>
-  </div>
-  </div>
-</div>    
-@endforelse
 
 @endsection

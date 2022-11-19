@@ -22,19 +22,14 @@ class KelasSeeder extends Seeder
                 'id_wali'=>1
             ],
             [
-                'tingkatan'=>'7',
-                'kode_kelas'=>'VII B',
-                'id_wali'=>2
-            ],
-            [
                 'tingkatan'=>'8',
                 'kode_kelas'=>'VIII A',
-                'id_wali'=>1
+                'id_wali'=>2
             ],
             [
-                'tingkatan'=>'8',
-                'kode_kelas'=>'VIII B',
-                'id_wali'=>2
+                'tingkatan'=>'9',
+                'kode_kelas'=>'IX A',
+                'id_wali'=>3
             ],
             ]);
     }
