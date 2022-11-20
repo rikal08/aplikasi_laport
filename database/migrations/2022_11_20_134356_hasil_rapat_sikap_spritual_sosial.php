@@ -13,14 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('nilai_extra_merdeka', function (Blueprint $table) {
-            $table->id('id_nilai');
+        Schema::create('hasil_rapat_sikap_spritual_sosial', function (Blueprint $table) {
+            $table->id('id_hasil');
             $table->integer('id_kelas');
             $table->integer('id_tahun_ajaran');
-            $table->integer('id_guru');
-            $table->integer('id_mapel');
             $table->integer('nisn_siswa');
-            $table->string('ket');
+            $table->string('hasil_rapat');
             $table->timestamps();
         });
     }
@@ -32,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('nilai_extra_merdeka');
+        Schema::dropIfExists('hasil_rapat_sikap_spritual_sosial');
     }
 };

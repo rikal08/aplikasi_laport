@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\DB;
 
 class ThaController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
         $tha = TahunAjaran::orderBy('id_ta','DESC')->get();

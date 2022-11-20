@@ -9,6 +9,10 @@ use PDF;
 
 class ModelRaportController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
         $format = ModelRaport::all();

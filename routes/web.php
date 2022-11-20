@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\DataSekolah;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HalamanSiswa;
 use App\Http\Controllers\ThaController;
 use App\Http\Controllers\GuruController;
 use App\Http\Controllers\UserController;
@@ -10,6 +11,7 @@ use App\Http\Controllers\KelasController;
 use App\Http\Controllers\NilaiController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\BlankoController;
+use App\Http\Controllers\RaportController;
 use App\Http\Controllers\Api\MapelController;
 use App\Http\Controllers\DataAdminController;
 use App\Http\Controllers\DataExtraController;
@@ -19,6 +21,7 @@ use App\Http\Controllers\GuruMapelController;
 use App\Http\Controllers\DataKepsekController;
 use App\Http\Controllers\NilaiExtraController;
 use App\Http\Controllers\ModelRaportController;
+use App\Http\Controllers\HalamanSiswaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,6 +73,32 @@ Route::post('data-nilai/input-nilai',[App\Http\Controllers\NilaiController::clas
 Route::post('data-nilai/update-nilai',[App\Http\Controllers\NilaiController::class,'update_nilai']);
 
 Route::resource('data-nilai-extra',NilaiExtraController::class);
+Route::post('data-nilai-extra/get-nilai-extra',[App\Http\Controllers\NilaiExtraController::class,'get_nilai_extra']);
+Route::post('data-nilai-extra/input-nilai-extra',[App\Http\Controllers\NilaiExtraController::class,'input_nilai_extra']);
+Route::post('data-nilai-extra/hapus-nilai-extra',[App\Http\Controllers\NilaiExtraController::class,'hapus_nilai_extra']);
+Route::post('data-nilai-extra/hapus-nilai-extra2',[App\Http\Controllers\NilaiExtraController::class,'hapus_nilai_extra2']);
+
+
+Route::get('raport/hasil-sikap-spritual-sosial',[App\Http\Controllers\RaportController::class,'hasil_sikap']);
+Route::get('raport/hasil-sikap-spritual-sosial/{id}',[App\Http\Controllers\RaportController::class,'hasil_sikap_show']);
+Route::post('raport/tambah-hasil-rapat',[App\Http\Controllers\RaportController::class,'tambah_data_hasil_rapat_sikap']);
+Route::post('raport/update-hasil-rapat/{id}',[App\Http\Controllers\RaportController::class,'update_hasil_rapat_sikap']);
+
+Route::get('data-kehadiran-siswa',[App\Http\Controllers\RaportController::class,'data_kehadiran_siswa']);
+Route::get('data-kehadiran-siswa/{id}',[App\Http\Controllers\RaportController::class,'data_kehadiran_siswa_show']);
+Route::get('set-data-kehadiran/{id}',[App\Http\Controllers\RaportController::class,'set_data_kehadiran']);
+Route::post('update-kehadiran/{id}',[App\Http\Controllers\RaportController::class,'update_kehadiran']);
+
+
+Route::get('cetak-raport',[App\Http\Controllers\RaportController::class,'cetak_raport']);
+Route::post('print-raport',[App\Http\Controllers\RaportController::class,'print_raport']);
+
+
+Route::get('raport-saya',[HalamanSiswa::class,'raport_saya']);
+Route::post('print-raport-saya',[HalamanSiswa::class,'print_raport']);
+
+
+
 
 // // API
 

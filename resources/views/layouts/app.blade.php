@@ -64,8 +64,10 @@
             @include('menu.admin_menu')
         @elseif(Auth::user()->level==3)
             @include('menu.guru_menu')
+        @elseif(Auth::user()->level==4)
+            @include('menu.siswa_menu')
         @else
-            
+        @include('menu.kepsek_menu')
         @endif
       </ul>
     </section>

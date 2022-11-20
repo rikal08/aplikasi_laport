@@ -307,5 +307,184 @@
   })
 </script>
 
+{{-- script nilai extrakulikuler merdeka--}}
+<script type="text/javascript">
+var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+  $(document).ready(function(){
+    $('#pilih_tha_3').click(function(){
+      var id_tahun_ajaran = $('#pilih_ta_3').val();
+      var id_kelas = $('#id_kelas').val();
+      var id_guru = $('#id_guru').val();
+      var id_mapel = $('#id_mapel').val();
+
+      $.ajax({
+        url:'get-nilai-extra',
+        type:'post',
+        data: {_token: CSRF_TOKEN, id_tahun_ajaran:id_tahun_ajaran,id_kelas:id_kelas,id_guru:id_guru,id_mapel:id_mapel},
+        dataType: 'json',
+          success: function(response){
+            createRows3(response);
+        }
+      });
+    });
+
+    // input nilai
+    $('#simpan_nilai_extra').click(function(){
+      var id_tahun_ajaran = $('#id_tahun_ajaran').val();
+      var id_kelas = $('#id_kelas').val();
+      var id_guru = $('#id_guru').val();
+      var id_mapel = $('#id_mapel').val();
+      var nisn_siswa = $('#nisn_siswa').val();
+      var ket = $('#ket').val();
+
+  
+
+      $.ajax({
+        url:'input-nilai-extra',
+        type:'post',
+        data: {_token: CSRF_TOKEN, id_tahun_ajaran:id_tahun_ajaran,id_kelas:id_kelas,id_guru:id_guru,id_mapel:id_mapel,nisn_siswa:nisn_siswa,ket:ket},
+        dataType: 'json',
+          success: function(response){
+            $('#modal-create').modal('hide');
+            $('#alert_success').html('<div class="alert bg-success">Nilai berhasil diinputkan, cari untuk melihat nilai</div>')
+        }
+      });
+    });
+  });
+
+  function createRows3(response){
+      var len = 0;
+      $('#example1 tbody').empty(); // Empty <tbody>
+      if(response['data'] != null){
+         len = response['data'].length;
+      }
+
+      if(len>0){
+        for(var i=0; i<len;i++){
+          var id_nilai = response['data'][i].id_nilai;
+          var nisn_siswa = response['data'][i].nisn_siswa;
+          var nama_siswa = response['data'][i].nama_siswa;
+          var ket = response['data'][i].ket;
+      
+
+          var tr_str = "<tr>" +
+             "<td align='center'>" + (i+1) + "</td>" +
+             "<td align='left'>" + nisn_siswa + "</td>" +
+             "<td align='left'>" + nama_siswa + "</td>" +
+             "<td align='left'>" + ket + "</td>" +
+             "<td align='left'><a href='javascript:void(0)' type='button' onclick='return hapusNilaiExtra("+id_nilai+")' class='btn btn-danger'> Hapus</a></td>" +
+           "</tr>";
+
+          
+          $("#example1 tbody").append(tr_str);
+        }
+      }
+    }
+
+    function hapusNilaiExtra(id_nilai){
+        var id_nilai = id_nilai;
+        $.ajax({
+        url:'hapus-nilai-extra',
+        type:'post',
+        data: {_token: CSRF_TOKEN, id_nilai:id_nilai},
+        dataType: 'json',
+          success: function(response){
+            $('#pilih_tha_3').click();
+            $('#alert_success').html('<div class="alert bg-danger">Nilai berhasil dihapus</div>')
+        }
+      });
+    }
+</script>
+{{-- extra 13 --}}
+<script type="text/javascript">
+  var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+    $(document).ready(function(){
+      $('#pilih_tha_4').click(function(){
+        var id_tahun_ajaran = $('#pilih_ta_4').val();
+        var id_kelas = $('#id_kelas').val();
+        var id_guru = $('#id_guru').val();
+        var id_mapel = $('#id_mapel').val();
+  
+        $.ajax({
+          url:'get-nilai-extra',
+          type:'post',
+          data: {_token: CSRF_TOKEN, id_tahun_ajaran:id_tahun_ajaran,id_kelas:id_kelas,id_guru:id_guru,id_mapel:id_mapel},
+          dataType: 'json',
+            success: function(response){
+              createRows4(response);
+          }
+        });
+      });
+  
+      // input nilai
+      $('#simpan_nilai_extra2').click(function(){
+        var id_tahun_ajaran = $('#id_tahun_ajaran').val();
+        var id_kelas = $('#id_kelas').val();
+        var id_guru = $('#id_guru').val();
+        var id_mapel = $('#id_mapel').val();
+        var nisn_siswa = $('#nisn_siswa').val();
+        var nilai = $('#nilai').val();
+        var ket = $('#ket').val();
+  
+    
+  
+        $.ajax({
+          url:'input-nilai-extra',
+          type:'post',
+          data: {_token: CSRF_TOKEN, id_tahun_ajaran:id_tahun_ajaran,id_kelas:id_kelas,id_guru:id_guru,id_mapel:id_mapel,nisn_siswa:nisn_siswa,nilai:nilai,ket:ket},
+          dataType: 'json',
+            success: function(response){
+              $('#modal-create').modal('hide');
+              $('#alert_success').html('<div class="alert bg-success">Nilai berhasil diinputkan, cari untuk melihat nilai</div>')
+          }
+        });
+      });
+    });
+  
+    function createRows4(response){
+        var len = 0;
+        $('#example1 tbody').empty(); // Empty <tbody>
+        if(response['data'] != null){
+           len = response['data'].length;
+        }
+  
+        if(len>0){
+          for(var i=0; i<len;i++){
+            var id_nilai = response['data'][i].id_nilai;
+            var nisn_siswa = response['data'][i].nisn_siswa;
+            var nama_siswa = response['data'][i].nama_siswa;
+            var nilai = response['data'][i].nilai;
+            var ket = response['data'][i].ket;
+        
+  
+            var tr_str = "<tr>" +
+               "<td align='center'>" + (i+1) + "</td>" +
+               "<td align='left'>" + nisn_siswa + "</td>" +
+               "<td align='left'>" + nama_siswa + "</td>" +
+               "<td align='left'>" + nilai + "</td>" +
+               "<td align='left'>" + ket + "</td>" +
+               "<td align='left'><a href='javascript:void(0)' type='button' onclick='return hapusNilaiExtra2("+id_nilai+")' class='btn btn-danger'> Hapus</a></td>" +
+             "</tr>";
+  
+            
+            $("#example1 tbody").append(tr_str);
+          }
+        }
+      }
+  
+      function hapusNilaiExtra2(id_nilai){
+          var id_nilai = id_nilai;
+          $.ajax({
+          url:'hapus-nilai-extra2',
+          type:'post',
+          data: {_token: CSRF_TOKEN, id_nilai:id_nilai},
+          dataType: 'json',
+            success: function(response){
+              $('#pilih_tha_4').click();
+              $('#alert_success').html('<div class="alert bg-danger">Nilai berhasil dihapus</div>')
+          }
+        });
+      }
+  </script>
 </body>
 </html>
