@@ -42,7 +42,7 @@
                 <div class="form-group">
                     <label for="">Kelas</label>
                     <select name="id_kelas" class="form-control" id="">
-                        <option value="{{ $siswa->id_kelas }}">{{ $siswa->kelas->kode_kelas }}</option>
+                        <option value="{{ $siswa->id_kelas }}">{{ $siswa->kode_kelas }}</option>
                         @foreach ($kelas as $item)
                             <option value="{{ $item->id_kelas }}">{{ $item->kode_kelas }}</option>
                         @endforeach

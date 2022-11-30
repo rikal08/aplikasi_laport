@@ -52,7 +52,7 @@
                 <td>{{ $item->telepon }}</td>
                 <td>{{ $item->user->email }}</td>
                 <td>{{ $item->tingkatan }}</td>
-                <td>{{ $item->kelas->kode_kelas }}</td>
+                <td>{{ $item->kode_kelas }}</td>
                 <td>
                   <a href="" data-toggle="modal" data-target="#modal-hapus{{ $item->id_siswa }}" class="btn btn-danger"> <i class="fa fa-trash"></i></a>
                   <a href="{{ url('data-siswa/'.$item->id_siswa.'/edit') }}" class="btn btn-primary"> <i class="fa fa-edit"></i></a>

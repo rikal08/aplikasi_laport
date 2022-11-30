@@ -32,6 +32,12 @@
   </ul>
 </li>
 
+<li>
+  <a href="{{ url('/naik-kelas') }}">
+    <i class="fa fa-arrow-up"></i> <span>Naik Kelas Siswa</span>
+  </a>
+</li>
+
 <li class="header">Setting</li>  
 
 <li>

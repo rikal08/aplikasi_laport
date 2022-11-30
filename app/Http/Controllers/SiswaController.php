@@ -18,7 +18,7 @@ class SiswaController extends Controller
     public function index(Request $request)
     {   
     
-        $siswa = Siswa::orderBy('id_kelas','ASC')->get();
+        $siswa = Siswa::leftjoin('kelas','siswa.id_kelas','=','kelas.id_kelas')->get();
         return view('data.siswa.read',['siswa'=>$siswa,'no'=>1]);
         
 
@@ -26,7 +26,7 @@ class SiswaController extends Controller
 
     public function show($id)
     {
-        $siswa = Siswa::where('tingkatan',$id)->get();
+        $siswa = Siswa::leftjoin('kelas','siswa.id_kelas','=','kelas.id_kelas')->where('siswa.tingkatan',$id)->get();
         return view('data.siswa.read',['siswa'=>$siswa,'no'=>1]);
     }
 
@@ -68,7 +68,7 @@ class SiswaController extends Controller
 
     public function edit(Request $request,$id)
     {
-        $siswa = Siswa::findorfail($id);
+        $siswa = Siswa::leftjoin('kelas','siswa.id_kelas','=','kelas.id_kelas')->findorfail($id);
 
         $kelas = Kelas::all();
 
@@ -79,7 +79,7 @@ class SiswaController extends Controller
 
     public function update(Request $request,$id)
     {
-        $siswa = Siswa::findorfail($id);
+        $siswa = Siswa::leftjoin('kelas','siswa.id_kelas','=','kelas.id_kelas')->findorfail($id);
         $user = User::findorfail($siswa->id_user);
 
         if ($request->password == true) {

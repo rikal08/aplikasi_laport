@@ -18,6 +18,7 @@ use App\Http\Controllers\DataExtraController;
 use App\Http\Controllers\DataMapelController;
 use App\Http\Controllers\GuruExtraController;
 use App\Http\Controllers\GuruMapelController;
+use App\Http\Controllers\NaikKelasController;
 use App\Http\Controllers\DataKepsekController;
 use App\Http\Controllers\NilaiExtraController;
 use App\Http\Controllers\ModelRaportController;
@@ -97,7 +98,7 @@ Route::post('print-raport',[App\Http\Controllers\RaportController::class,'print_
 Route::get('raport-saya',[HalamanSiswa::class,'raport_saya']);
 Route::post('print-raport-saya',[HalamanSiswa::class,'print_raport']);
 
-
+Route::resource('naik-kelas',NaikKelasController::class);
 
 
 // // API

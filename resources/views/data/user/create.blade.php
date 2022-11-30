@@ -31,7 +31,7 @@
                     <input placeholder="Masukan Password" required type="text" class="form-control" name="password">
                 </div>
                 <div class="form-group">
-                    <label for="">Password</label>
+                    <label for="">Hak Akses</label>
                     <select name="level" id="" class="form-control">
                         <option value="1">Administator</option>
                         <option value="2">Kepala Sekolah</option>
